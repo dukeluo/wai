@@ -1,0 +1,32 @@
+{
+  "name": "moyu",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "start": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "lint": "eslint --ext .ts,.vue src && stylelint **/*.vue"
+  },
+  "dependencies": {
+    "vue": "^3.2.25"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.21.0",
+    "@vitejs/plugin-vue": "^2.3.1",
+    "@vue/eslint-config-typescript": "^10.0.0",
+    "eslint": "^8.14.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.7.1",
+    "postcss-html": "^1.4.1",
+    "prettier": "^2.6.2",
+    "stylelint": "^14.6.1",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recommended-scss": "^6.0.0",
+    "stylelint-config-recommended-vue": "^1.4.0",
+    "typescript": "^4.5.4",
+    "vite": "^2.9.5",
+    "vue-tsc": "^0.34.7"
+  }
+}
