@@ -10,22 +10,19 @@ interface IIsoscelesTrapezoidShapeProps {
 
 const props = defineProps<IIsoscelesTrapezoidShapeProps>()
 
-const waist = Math.ceil(Math.hypot((props.lowerBottom - props.upperBottom) / 2, props.height))
+const sideBorderWidth = Math.floor((props.lowerBottom - props.upperBottom) / 2)
 </script>
 
 <template>
   <section
     :style="{
       display: 'inline-block',
-      width: withPx(lowerBottom),
-      height: 0,
-      background: 'transparent',
-      borderStyle: 'solid',
-      borderColor: 'transparent',
-      borderBottomWidth: withPx(upperBottom),
+      width: withPx(upperBottom),
+      border: '0 solid transparent',
+      borderBottomWidth: withPx(height),
       borderBottomColor: color,
-      borderLeftWidth: withPx(waist),
-      borderRightWidth: withPx(waist),
+      borderLeftWidth: withPx(sideBorderWidth),
+      borderRightWidth: withPx(sideBorderWidth),
     }"
-  ></section>
+  />
 </template>
