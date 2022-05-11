@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'noto-serif-sc';
+  src: local('Noto Serif SC'), url('./fonts/NotoSerifSC-Regular.otf') format('opentype');
+  font-weight: regular;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'noto-serif-sc';
+  src: local('Noto Serif SC'), url('./fonts/NotoSerifSC-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: 'Source Han Serif SC', 'Source Han Serif CN', 'Source Han Serif', 'noto-serif-sc', serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
