@@ -1,7 +1,23 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+interface IContentLayerProps {
+  angle?: number
+  top?: string
+  left?: string
+}
+
+defineProps<IContentLayerProps>()
+</script>
 
 <template>
-  <section id="content">
+  <section
+    id="content"
+    :style="{
+      position: 'absolute',
+      transform: `rotate(${angle ?? 0}turn)`,
+      top: top ?? 0,
+      left: left ?? 0,
+    }"
+  >
     <section id="datatime">
       <p id="moment">23:16:24</p>
       <p id="tip">
@@ -44,7 +60,7 @@ ul {
 }
 
 #content {
-  display: inline-block;
+  width: 420px;
 }
 
 #datatime {
@@ -55,7 +71,6 @@ ul {
   font-size: 72px;
   font-weight: bold;
   margin-bottom: 12px;
-  text-align: center;
 }
 
 #title {

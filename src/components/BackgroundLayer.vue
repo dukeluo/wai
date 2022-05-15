@@ -3,7 +3,17 @@ import IsoscelesTrapezoidShape from './shapes/IsoscelesTrapezoidShape.vue'
 </script>
 
 <template>
-  <main><IsoscelesTrapezoidShape :upper-bottom="240" :lower-bottom="376" :height="224" color="#e81d27" /></main>
+  <main>
+    <IsoscelesTrapezoidShape
+      :upper-bottom="480"
+      :lower-bottom="752"
+      :height="404"
+      color="#e81d27"
+      :angle="0.75"
+      top="24%"
+      left="40%"
+    />
+  </main>
 </template>
 
 <style scoped>

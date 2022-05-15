@@ -4,8 +4,8 @@ import ContentLayer from './components/ContentLayer.vue'
 </script>
 
 <template>
-  <ContentLayer />
   <BackgroundLayer />
+  <ContentLayer :angle="0.85" top="14%" left="22%" />
 </template>
 
 <style>
