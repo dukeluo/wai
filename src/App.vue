@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import BaseLayer from './components/BaseLayer.vue'
+import BackgroundLayer from './components/BackgroundLayer.vue'
+import ContentLayer from './components/ContentLayer.vue'
 </script>
 
 <template>
-  <BaseLayer />
+  <ContentLayer />
+  <BackgroundLayer />
 </template>
 
 <style>
