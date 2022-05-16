@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import BackgroundLayer from './components/BackgroundLayer.vue'
 import ContentLayer from './components/ContentLayer.vue'
 </script>
 
 <template>
-  <BackgroundLayer />
-  <ContentLayer :angle="0.85" top="14%" left="22%" />
+  <ContentLayer :angle="0.6" />
 </template>
 
 <style>
@@ -17,5 +15,9 @@ html,
 body,
 #app {
   height: 100%;
+  background-color: #f7f4e3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>
