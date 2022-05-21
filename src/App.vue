@@ -11,6 +11,10 @@ body {
   font-family: 'Hiragino Sans GB', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+p {
   margin: 0;
 }
 

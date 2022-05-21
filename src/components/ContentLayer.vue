@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { withPx } from '../helpers/styles'
+import DateTime from './DateTime.vue'
 
 interface IContentLayerProps {
   angle?: number
@@ -28,15 +29,7 @@ onMounted(() => {
     }"
   >
     <section id="left" ref="leftColumnRef" class="column">
-      <section id="datatime" class="part">
-        <p id="moment">23:16:24</p>
-        <p>
-          今天是<span class="hightlight">2021</span>年<span class="hightlight">5</span>月<span class="hightlight"
-            >11</span
-          >日<span class="hightlight">星期日</span>
-        </p>
-        <p>距离下一个休息日<span class="hightlight">周六</span>还有<span class="hightlight">1</span>天</p>
-      </section>
+      <DateTime />
       <section class="part">
         <p class="title">今天过什么节</p>
         <section class="items">
@@ -77,18 +70,11 @@ onMounted(() => {
 
 <style scoped>
 p {
-  margin: 0;
   font-size: 20px;
 }
 
 ul {
   padding-left: 20px;
-}
-
-.hightlight {
-  font-size: 28px;
-  font-weight: bold;
-  margin: 8px;
 }
 
 .column {
@@ -111,17 +97,6 @@ ul {
 #content {
   display: flex;
   align-items: center;
-}
-
-#datatime {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-#moment {
-  font-size: 72px;
-  font-weight: bold;
-  margin-bottom: 12px;
 }
 
 #left {
