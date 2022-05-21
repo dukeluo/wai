@@ -3,11 +3,14 @@ import ContentLayer from './components/ContentLayer.vue'
 </script>
 
 <template>
-  <ContentLayer :angle="0.6" />
+  <ContentLayer />
 </template>
 
 <style>
 body {
+  font-family: 'Hiragino Sans GB', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   margin: 0;
 }
 
