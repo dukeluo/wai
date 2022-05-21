@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import { withPx } from '../helpers/styles'
+import { withPx } from '../helpers/style'
 import DateTime from './DateTime.vue'
 
 interface IContentLayerProps {

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useMoment } from '../composables/useCurrentTime'
+import { useMoment } from '../composables/useMoment'
 import { getTime, getWeekday, getYear, getMonth, getDay } from '../helpers/date'
 
 const { moment } = useMoment()
