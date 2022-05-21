@@ -1,19 +1,33 @@
 <script setup lang="ts">
+import { ref, onMounted } from 'vue'
+import { withPx } from '../helpers/styles'
+
 interface IContentLayerProps {
   angle?: number
 }
 
-defineProps<IContentLayerProps>()
+const RIGHT_COLUMN_HEIGHT = 220
+
+const props = withDefaults(defineProps<IContentLayerProps>(), {
+  angle: 0,
+})
+const leftColumnRef = ref<HTMLDivElement>()
+const rightColumnRef = ref<HTMLDivElement>()
+const rightColumnWidth = ref(0)
+
+onMounted(() => {
+  rightColumnWidth.value = leftColumnRef.value?.clientHeight ?? 0
+})
 </script>
 
 <template>
   <section
     id="content"
     :style="{
-      transform: `rotate(${angle ?? 0}turn)`,
+      transform: `rotate(${props.angle}turn)`,
     }"
   >
-    <section class="column">
+    <section id="left" ref="leftColumnRef" class="column">
       <section id="datatime" class="part">
         <p id="moment">23:16:24</p>
         <p>
@@ -38,7 +52,16 @@ defineProps<IContentLayerProps>()
         </section>
       </section>
     </section>
-    <section id="right" class="column">
+    <section
+      id="right"
+      ref="rightColumnRef"
+      class="column"
+      :style="{
+        width: withPx(rightColumnWidth),
+        marginLeft: withPx(RIGHT_COLUMN_HEIGHT - rightColumnWidth),
+        transform: `rotate(0.75turn) translateY(${withPx(Math.floor((rightColumnWidth - RIGHT_COLUMN_HEIGHT) / 2))})`,
+      }"
+    >
       <section class="part">
         <p class="title">当季吃什么</p>
         <section class="items">
@@ -72,11 +95,6 @@ ul {
   display: inline-block;
 }
 
-.part {
-  width: 420px;
-  margin-bottom: 60px;
-}
-
 .title {
   font-size: 28px;
   font-weight: bold;
@@ -97,6 +115,7 @@ ul {
 
 #datatime {
   text-align: center;
+  margin-bottom: 60px;
 }
 
 #moment {
@@ -105,7 +124,7 @@ ul {
   margin-bottom: 12px;
 }
 
-#right {
-  transform: rotate(0.75turn) translate(10px, -60px);
+#left {
+  width: 420px;
 }
 </style>
