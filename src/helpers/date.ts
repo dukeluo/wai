@@ -16,3 +16,5 @@ export const getWeekday = (date: Date) =>
   new Intl.DateTimeFormat('zh-CN', {
     weekday: 'long',
   }).format(date)
+
+export const getDate = (date: Date) => `${getYear(date)}-${getMonth(date)}-${getDay(date)}`

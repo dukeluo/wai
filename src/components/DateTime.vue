@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { useMoment } from '../composables/useMoment'
+import { useNextHolidayApi } from '../composables/useNextHolidayApi'
 import { getTime, getWeekday, getYear, getMonth, getDay } from '../helpers/date'
 
 const { moment } = useMoment()
+const { name, rest } = useNextHolidayApi(moment.value)
 </script>
 
 <template>
@@ -14,7 +16,11 @@ const { moment } = useMoment()
       >月<span class="hightlight">{{ getDay(moment) }}</span
       >日<span class="hightlight">{{ getWeekday(moment) }}</span>
     </p>
-    <p>距离下一个休息日<span class="hightlight">周六</span>还有<span class="hightlight">1</span>天</p>
+    <p>
+      距离下一个休息日<span class="hightlight">{{ name }}</span
+      >还有<span class="hightlight">{{ rest }}</span
+      >天
+    </p>
   </section>
 </template>
 
