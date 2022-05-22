@@ -1,14 +1,19 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useTodayApi } from '../composables/useTodayApi'
+
+interface ITodayHolidayProps {
+  date: Date
+}
+
+const props = defineProps<ITodayHolidayProps>()
+const { events } = useTodayApi(props.date)
+</script>
 
 <template>
   <section class="card">
-    <h2 class="title">今天过什么节</h2>
+    <h2 class="title">今天是什么日子</h2>
     <section class="items">
-      <p class="item">世界上大多数国家的新年，中文称为“元旦”，这一天是公历新一年的开始</p>
-      <p class="item">瑞士：妇女掌权日</p>
-      <p class="item">古巴：全国解放日</p>
-      <p class="item">苏丹：国庆日</p>
-      <p class="item">中国台湾：开国纪念日（始于1912年）</p>
+      <p v-for="(event, index) in events" :key="index" class="item">{{ event }}</p>
     </section>
   </section>
 </template>

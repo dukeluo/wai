@@ -1,20 +1,23 @@
 <script setup lang="ts">
-import { useMoment } from '../composables/useMoment'
 import { useNextHolidayApi } from '../composables/useNextHolidayApi'
 import { getTime, getWeekday, getYear, getMonth, getDay } from '../helpers/date'
 
-const { moment } = useMoment()
-const { name, rest } = useNextHolidayApi(moment.value)
+interface IDateTimeProps {
+  date: Date
+}
+
+const props = defineProps<IDateTimeProps>()
+const { name, rest } = useNextHolidayApi(props.date)
 </script>
 
 <template>
   <section id="datetime">
-    <p id="moment">{{ getTime(moment) }}</p>
+    <p id="moment">{{ getTime(props.date) }}</p>
     <p>
-      今天是<span class="hightlight">{{ getYear(moment) }}</span
-      >年<span class="hightlight">{{ getMonth(moment) }}</span
-      >月<span class="hightlight">{{ getDay(moment) }}</span
-      >日<span class="hightlight">{{ getWeekday(moment) }}</span>
+      今天是<span class="hightlight">{{ getYear(props.date) }}</span
+      >年<span class="hightlight">{{ getMonth(props.date) }}</span
+      >月<span class="hightlight">{{ getDay(props.date) }}</span
+      >日<span class="hightlight">{{ getWeekday(props.date) }}</span>
     </p>
     <p>
       距离下一个休息日<span class="hightlight">{{ name }}</span

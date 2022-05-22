@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import { useMoment } from '../composables/useMoment'
 import { withPx } from '../helpers/style'
 import DateTime from './DateTime.vue'
 import TodayHoliday from './TodayHoliday.vue'
@@ -16,6 +17,7 @@ const props = withDefaults(defineProps<IContentLayerProps>(), {
 const leftColumnRef = ref<HTMLDivElement>()
 const rightColumnRef = ref<HTMLDivElement>()
 const rightColumnWidth = ref(0)
+const { moment } = useMoment()
 
 onMounted(() => {
   rightColumnWidth.value = leftColumnRef.value?.clientHeight ?? 0
@@ -30,8 +32,8 @@ onMounted(() => {
     }"
   >
     <section id="left" ref="leftColumnRef" class="column">
-      <DateTime />
-      <TodayHoliday />
+      <DateTime :date="moment" />
+      <TodayHoliday :date="moment" />
     </section>
     <section
       id="right"
