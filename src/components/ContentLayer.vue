@@ -3,7 +3,7 @@ import { ref, onMounted } from 'vue'
 import { useMoment } from '../composables/useMoment'
 import { withPx } from '../helpers/style'
 import DateTime from './DateTime.vue'
-import TodayHoliday from './TodayHoliday.vue'
+import TodayEvent from './TodayEvent.vue'
 
 interface IContentLayerProps {
   angle?: number
@@ -33,7 +33,7 @@ onMounted(() => {
   >
     <section id="left" ref="leftColumnRef" class="column">
       <DateTime :date="moment" />
-      <TodayHoliday :date="moment" />
+      <TodayEvent :date="moment" />
     </section>
     <section
       id="right"
