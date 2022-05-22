@@ -13,11 +13,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-body,
-p {
-  margin: 0;
-}
-
 html,
 body,
 #app {

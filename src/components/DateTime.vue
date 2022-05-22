@@ -27,6 +27,7 @@ const { name, rest } = useNextHolidayApi(moment.value)
 <style scoped>
 p {
   font-size: 18px;
+  margin: 4px;
   line-height: 1.4;
 }
 
