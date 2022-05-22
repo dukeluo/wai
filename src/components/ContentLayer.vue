@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { useContentLayout } from '../composables/useContentLayout'
 import { useMoment } from '../composables/useMoment'
 import { withPx } from '../helpers/style'
 import DateTime from './DateTime.vue'
@@ -9,19 +9,11 @@ interface IContentLayerProps {
   angle?: number
 }
 
-const RIGHT_COLUMN_HEIGHT = 220
-
 const props = withDefaults(defineProps<IContentLayerProps>(), {
   angle: 0,
 })
-const leftColumnRef = ref<HTMLDivElement>()
-const rightColumnRef = ref<HTMLDivElement>()
-const rightColumnWidth = ref(0)
 const { moment } = useMoment()
-
-onMounted(() => {
-  rightColumnWidth.value = leftColumnRef.value?.clientHeight ?? 0
-})
+const { leftRef, rightRef, rightWidth, offset1, offset2 } = useContentLayout()
 </script>
 
 <template>
@@ -31,18 +23,18 @@ onMounted(() => {
       transform: `rotate(${props.angle}turn)`,
     }"
   >
-    <section id="left" ref="leftColumnRef" class="column">
+    <section id="left" ref="leftRef" class="column">
       <DateTime :date="moment" />
       <TodayEvent :date="moment" />
     </section>
     <section
       id="right"
-      ref="rightColumnRef"
+      ref="rightRef"
       class="column"
       :style="{
-        width: withPx(rightColumnWidth),
-        marginLeft: withPx(RIGHT_COLUMN_HEIGHT - rightColumnWidth),
-        transform: `rotate(0.75turn) translateY(${withPx(Math.floor((rightColumnWidth - RIGHT_COLUMN_HEIGHT) / 2))})`,
+        width: withPx(rightWidth),
+        marginLeft: withPx(offset1),
+        transform: `rotate(0.75turn) translateY(${withPx(offset2)})`,
       }"
     >
       <section class="card">
