@@ -4,6 +4,7 @@ import { useMoment } from '../composables/useMoment'
 import { withPx } from '../helpers/style'
 import DateTime from './DateTime.vue'
 import TodayEvent from './TodayEvent.vue'
+import SeasonFood from './SeasonFood.vue'
 
 interface IContentLayerProps {
   angle?: number
@@ -37,15 +38,7 @@ const { leftRef, rightRef, rightWidth, offset1, offset2 } = useContentLayout()
         transform: `rotate(0.75turn) translateY(${withPx(offset2)})`,
       }"
     >
-      <section class="card">
-        <p class="title">当季吃什么</p>
-        <section class="items">
-          <ul>
-            <li><p>水果：菠萝、甘蔗、砂糖橘、蛋黄果、番石榴、橙子、青枣</p></li>
-            <li><p>蔬菜：白菜、菠菜、彩椒、胡萝卜、小白菜、芥菜、平菇、蒜黄、香菇、杏鲍菇、紫菜、豆瓣菜、紫菜苔</p></li>
-          </ul>
-        </section>
-      </section>
+      <SeasonFood />
     </section>
   </section>
 </template>
