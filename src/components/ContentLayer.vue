@@ -38,7 +38,7 @@ const { leftRef, rightRef, rightWidth, offset1, offset2 } = useContentLayout()
         transform: `rotate(0.75turn) translateY(${withPx(offset2)})`,
       }"
     >
-      <SeasonFood />
+      <SeasonFood :date="moment" />
     </section>
   </section>
 </template>
