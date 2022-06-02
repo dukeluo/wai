@@ -40,3 +40,14 @@ type MonthInHistory = {
 export type YearInHistory = {
   [month in Month]: MonthInHistory
 }
+
+export type SeasonFood = {
+  [month in Month]: {
+    vegetables: string[]
+    fruits: string[]
+  }
+}
+
+export interface IContentBaseProps {
+  date: Date
+}

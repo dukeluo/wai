@@ -1,26 +1,23 @@
 <script setup lang="ts">
-import seasonFoodData from '../data/season_food.json'
+import _seasonFoodData from '../data/season_food.json'
 import { getMonth } from '../helpers/date'
 import { shuffle } from '../helpers/shuffle'
-import { Month } from '../types'
+import type { IContentBaseProps, Month, SeasonFood } from '../types'
 
-interface ISeasonFoodProps {
-  date: Date
-}
-
-const props = defineProps<ISeasonFoodProps>()
-const key = `${getMonth(props.date)}` as Month
-const { vegetables, fruits } = seasonFoodData[key]
-const vegetableDisplayString = shuffle(vegetables).slice(0, 8).join('、')
-const fruitDisplayString = shuffle(fruits).slice(0, 8).join('、')
+const props = defineProps<IContentBaseProps>()
+const seasonFoodData = _seasonFoodData as SeasonFood
+const month = getMonth(props.date).toString() as Month
+const { vegetables, fruits } = seasonFoodData[month]
+const vegetablesForDisplay = shuffle(vegetables).slice(0, 8)
+const fruitsForDisplay = shuffle(fruits).slice(0, 8)
 </script>
 
 <template>
   <section class="card">
     <h2 class="title">当季吃什么</h2>
     <section class="items">
-      <p class="item"><span class="hightlight">蔬菜：</span>{{ vegetableDisplayString }}</p>
-      <p class="item"><span class="hightlight">水果：</span>{{ fruitDisplayString }}</p>
+      <p class="item"><span class="hightlight">蔬菜：</span>{{ vegetablesForDisplay.join('、') }}</p>
+      <p class="item"><span class="hightlight">水果：</span>{{ fruitsForDisplay.join('、') }}</p>
     </section>
   </section>
 </template>

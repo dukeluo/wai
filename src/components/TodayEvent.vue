@@ -2,17 +2,12 @@
 import _todayInHistoryData from '../data/today_in_history.json'
 import { getDay, getMonth } from '../helpers/date'
 import { shuffle } from '../helpers/shuffle'
-import { Day, Month, YearInHistory } from '../types'
+import type { Day, IContentBaseProps, Month, YearInHistory } from '../types'
 
-interface ITodayHolidayProps {
-  date: Date
-}
-
-const props = defineProps<ITodayHolidayProps>()
+const props = defineProps<IContentBaseProps>()
 const todayInHistoryData = _todayInHistoryData as YearInHistory
 const month = getMonth(props.date).toString() as Month
 const day = getDay(props.date).toString() as Day
-
 const todayHistoryEvents = todayInHistoryData[month][day] ?? []
 const eventsForDisplay = shuffle(todayHistoryEvents).slice(0, 5)
 </script>

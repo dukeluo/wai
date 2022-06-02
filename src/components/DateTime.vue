@@ -1,12 +1,9 @@
 <script setup lang="ts">
 import { useNextHolidayApi } from '../composables/useNextHolidayApi'
 import { getTime, getWeekday, getYear, getMonth, getDay } from '../helpers/date'
+import type { IContentBaseProps } from '../types'
 
-interface IDateTimeProps {
-  date: Date
-}
-
-const props = defineProps<IDateTimeProps>()
+const props = defineProps<IContentBaseProps>()
 const { name, rest } = useNextHolidayApi(props.date)
 </script>
 
