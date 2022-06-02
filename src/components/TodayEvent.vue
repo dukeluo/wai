@@ -1,19 +1,27 @@
 <script setup lang="ts">
-import { useTodayApi } from '../composables/useTodayApi'
+import _todayInHistoryData from '../data/today_in_history.json'
+import { getDay, getMonth } from '../helpers/date'
+import { shuffle } from '../helpers/shuffle'
+import { Day, Month, YearInHistory } from '../types'
 
 interface ITodayHolidayProps {
   date: Date
 }
 
 const props = defineProps<ITodayHolidayProps>()
-const { events } = useTodayApi(props.date)
+const todayInHistoryData = _todayInHistoryData as YearInHistory
+const month = getMonth(props.date).toString() as Month
+const day = getDay(props.date).toString() as Day
+
+const todayHistoryEvents = todayInHistoryData[month][day] ?? []
+const eventsForDisplay = shuffle(todayHistoryEvents).slice(0, 5)
 </script>
 
 <template>
   <section class="card">
-    <h2 class="title">今天是什么日子</h2>
+    <h2 class="title">历史上的今天</h2>
     <section class="items">
-      <p v-for="(event, index) in events" :key="index" class="item">{{ event }}</p>
+      <p v-for="(event, index) in eventsForDisplay" :key="index" class="item">{{ event }}</p>
     </section>
   </section>
 </template>
