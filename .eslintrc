@@ -15,9 +15,17 @@
   ],
   "plugins": [
     "@typescript-eslint",
-    "prettier"
+    "prettier",
+    "check-file"
   ],
   "rules": {
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "check-file/no-index": "error",
+    "check-file/folder-naming-convention": [
+      "error",
+      {
+        "src/*/": "CAMEL_CASE"
+      }
+    ]
   }
 }
