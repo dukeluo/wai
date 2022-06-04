@@ -14,7 +14,7 @@ const props = withDefaults(defineProps<IContentLayerProps>(), {
   angle: 0,
 })
 const { moment } = useMoment()
-const { leftRef, rightRef, rightWidth, offset1, offset2 } = useContentLayout()
+const { leftRef, rightWidth } = useContentLayout()
 </script>
 
 <template>
@@ -30,12 +30,9 @@ const { leftRef, rightRef, rightWidth, offset1, offset2 } = useContentLayout()
     </section>
     <section
       id="right"
-      ref="rightRef"
       class="column"
       :style="{
         width: withPx(rightWidth),
-        marginLeft: withPx(offset1),
-        transform: `rotate(0.75turn) translateY(${withPx(offset2)})`,
       }"
     >
       <SeasonFood :date="moment" />
@@ -53,9 +50,19 @@ const { leftRef, rightRef, rightWidth, offset1, offset2 } = useContentLayout()
 #content {
   display: flex;
   align-items: center;
+  position: relative;
+  padding-right: 144px;
 }
 
 #left {
   width: 420px;
+}
+
+#right {
+  transform: rotate(0.75turn) translate(-100%, 0);
+  transform-origin: left top;
+  position: absolute;
+  top: 0px;
+  left: 444px;
 }
 </style>
