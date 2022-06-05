@@ -1,8 +1,8 @@
 import { onMounted, ref } from 'vue'
 
 export const useContentLayout = () => {
-  const leftRef = ref<HTMLDivElement>()
-  const rightRef = ref<HTMLDivElement>()
+  const leftRef = ref<HTMLElement>()
+  const rightRef = ref<HTMLElement>()
   const rightWidth = ref(0)
 
   onMounted(() => {

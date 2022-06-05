@@ -1,15 +1,12 @@
 export default {
-  manifest_version: 2,
+  manifest_version: 3,
   name: '歪脖子标签页',
   description: '一款可以预防颈椎病的新标签页。',
   version: process.env.npm_package_version,
-  content_security_policy: "script-src 'self'; object-src 'self';",
+  author: 'Duke Luo <dukeluo@outlook.com> (https://shaiwang.life)',
+  homepage_url: 'https://github.com/DukeLuo/wai',
   chrome_url_overrides: {
     newtab: 'index.html',
-  },
-  browser_action: {
-    default_icon: 'icons/logo128.png',
-    default_title: '歪脖子标签页',
   },
   icons: {
     '16': 'icons/logo16.png',
