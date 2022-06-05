@@ -5,6 +5,8 @@
     "moduleResolution": "node"
   },
   "include": [
-    "vite.config.ts"
+    "vite.config.ts",
+    "manifest.config.ts",
+    "scripts/**/*.ts",
   ]
 }
