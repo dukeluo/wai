@@ -6,6 +6,7 @@
     "prepare": "husky install",
     "start": "vite",
     "build": "vue-tsc --noEmit && vite build",
+    "watch": "vite build --watch",
     "preview": "vite preview",
     "lint": "eslint --ext .ts,.vue src && stylelint **/*.vue"
   },
