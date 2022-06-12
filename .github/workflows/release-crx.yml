@@ -1,0 +1,41 @@
+name: Release .crx
+on:
+  push:
+    tags:
+      - v**
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Read package.json
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@main
+      - name: Build
+        run: |
+          npm install
+          npm run build
+      - name: Pack .zip
+        uses: cardinalby/webext-buildtools-pack-extension-dir-action@v1
+        with:
+          extensionDir: 'dist'
+          zipFilePath: 'wai-v${{ steps.package-version.outputs.current-version }}.zip'
+      - name: Pack .crx
+        uses: cardinalby/webext-buildtools-chrome-crx-action@v2
+        with:
+          zipFilePath: 'wai-v${{ steps.package-version.outputs.current-version }}.zip'
+          crxFilePath: 'wai-v${{ steps.package-version.outputs.current-version }}.crx'
+          privateKey: ${{ secrets.CRX_PRIVATE_KEY }}
+          updateXmlPath: 'update-v${{ steps.package-version.outputs.current-version }}.xml'
+          updateXmlCodebaseUrl: 'https://github.com/${{ github.repository }}/releases/latest/download/wai-v${{ steps.package-version.outputs.current-version }}.crx'
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          draft: true
+          generate_release_notes: true
+          files: |
+            wai-v${{ steps.package-version.outputs.current-version }}.crx
+            update-v${{ steps.package-version.outputs.current-version }}.xml
