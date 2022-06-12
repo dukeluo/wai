@@ -14,7 +14,7 @@ const fruitsForDisplay = shuffle(fruits).slice(0, 8)
 
 <template>
   <section class="card">
-    <h2 class="title">当季吃什么</h2>
+    <h2 class="title">这个季节吃什么</h2>
     <section class="items">
       <p class="item"><span class="hightlight">蔬菜：</span>{{ vegetablesForDisplay.join('、') }}</p>
       <p class="item"><span class="hightlight">水果：</span>{{ fruitsForDisplay.join('、') }}</p>
