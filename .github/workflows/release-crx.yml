@@ -37,5 +37,6 @@ jobs:
           draft: true
           generate_release_notes: true
           files: |
+            wai-v${{ steps.package-version.outputs.current-version }}.zip
             wai-v${{ steps.package-version.outputs.current-version }}.crx
             update-v${{ steps.package-version.outputs.current-version }}.xml
