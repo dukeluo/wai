@@ -33,6 +33,9 @@ const angle = Math.random().toPrecision(2)
         <SeasonFood :date="moment" />
       </section>
     </section>
+    <section id="about">
+      <a href="https://github.com/DukeLuo/wai" target="_blank"><img src="/icons/about.svg" alt="About" /></a>
+    </section>
   </main>
 </template>
 
@@ -44,6 +47,7 @@ const angle = Math.random().toPrecision(2)
 }
 
 #container {
+  width: 100%;
   height: 100%;
   background-color: #f7f4e3;
   display: flex;
@@ -68,5 +72,21 @@ const angle = Math.random().toPrecision(2)
   position: absolute;
   top: 0px;
   left: 444px;
+}
+
+#about {
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
 }
 </style>
