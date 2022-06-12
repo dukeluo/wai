@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "歪脖子新标签页",
+  "description": "一款可以预防颈椎病的新标签页扩展。",
+  "version": "0.0.0",
+  "author": "Duke Luo <dukeluo@outlook.com> (https://shaiwang.life)",
+  "homepage_url": "https://github.com/DukeLuo/wai",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "icons": {
+    "16": "icons/logo16.png",
+    "32": "icons/logo32.png",
+    "48": "icons/logo48.png",
+    "64": "icons/logo64.png",
+    "128": "icons/logo128.png"
+  }
+}
