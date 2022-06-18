@@ -30,8 +30,6 @@ jobs:
           zipFilePath: 'wai-v${{ steps.package-version.outputs.current-version }}.zip'
           crxFilePath: 'wai-v${{ steps.package-version.outputs.current-version }}.crx'
           privateKey: ${{ secrets.CRX_PRIVATE_KEY }}
-          updateXmlPath: 'update-v${{ steps.package-version.outputs.current-version }}.xml'
-          updateXmlCodebaseUrl: 'https://github.com/${{ github.repository }}/releases/latest/download/wai-v${{ steps.package-version.outputs.current-version }}.crx'
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
@@ -40,7 +38,6 @@ jobs:
           files: |
             wai-v${{ steps.package-version.outputs.current-version }}.zip
             wai-v${{ steps.package-version.outputs.current-version }}.crx
-            update-v${{ steps.package-version.outputs.current-version }}.xml
       - name: Upload to Chrome Web Store
         uses: trmcnvn/chrome-addon@v2
         with:

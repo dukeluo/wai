@@ -5,7 +5,6 @@ export default {
   version: process.env.npm_package_version,
   author: 'Duke Luo <dukeluo@outlook.com> (https://shaiwang.life)',
   homepage_url: 'https://github.com/DukeLuo/wai',
-  update_url: `https://github.com/DukeLuo/wai/releases/latest/download/wai-v${process.env.npm_package_version}.crx`,
   chrome_url_overrides: {
     newtab: 'index.html',
   },
