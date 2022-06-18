@@ -1,8 +1,9 @@
 name: Release .crx
-on:
-  push:
-    tags:
-      - v**
+on: [push]
+# on:
+#   push:
+#     tags:
+#       - v**
 permissions:
   contents: write
 jobs:
@@ -35,8 +36,16 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           draft: true
-          generate_release_notes: true
+          generate_release_notes: false
           files: |
             wai-v${{ steps.package-version.outputs.current-version }}.zip
             wai-v${{ steps.package-version.outputs.current-version }}.crx
             update-v${{ steps.package-version.outputs.current-version }}.xml
+      - name: Upload to Chrome Web Store
+        uses: trmcnvn/chrome-addon@v2
+        with:
+          extension: ackimleclkemolnfcfajficenpbnaiba
+          zip: 'wai-v${{ steps.package-version.outputs.current-version }}.zip'
+          client-id: ${{ secrets.CHROME_CLIENT_ID }}
+          client-secret: ${{ secrets.CHROME_CLIENT_SECRET }}
+          refresh-token: ${{ secrets.CHROME_REFRESH_TOKEN }}
