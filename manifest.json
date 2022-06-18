@@ -5,7 +5,6 @@
   "version": "0.0.1",
   "author": "Duke Luo <dukeluo@outlook.com> (https://shaiwang.life)",
   "homepage_url": "https://github.com/DukeLuo/wai",
-  "update_url": "https://github.com/DukeLuo/wai/releases/latest/download/wai-v0.0.1.crx",
   "chrome_url_overrides": {
     "newtab": "index.html"
   },
