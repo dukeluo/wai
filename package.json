@@ -1,7 +1,26 @@
 {
   "name": "wai",
+  "description": "A new tab web extension that can prevent cervical spondylosis",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DukeLuo/wai.git"
+  },
+  "keywords": [
+    "web extension",
+    "chrome extension",
+    "new tab",
+    "funny",
+    "awesome",
+    "cervical spondylosis"
+  ],
+  "author": "Duke Luo <dukeluo@outlook.com> (https://shaiwang.life)",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/DukeLuo/wai/issues"
+  },
+  "homepage": "https://github.com/DukeLuo/wai",
   "scripts": {
     "prepare": "husky install",
     "start": "vite",
