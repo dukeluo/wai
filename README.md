@@ -6,10 +6,11 @@
 > 一款可以预防颈椎病的新标签页扩展。
 
 ### 安装
+- [chrome web store](https://chrome.google.com/webstore/detail/%E6%AD%AA%E8%84%96%E5%AD%90%E6%96%B0%E6%A0%87%E7%AD%BE%E9%A1%B5/ackimleclkemolnfcfajficenpbnaiba)
 - [离线安装包](https://github.com/DukeLuo/wai/releases)
 - [在线体验](https://wai.shaiwang.life/)
 
-#### Chrome 安装方法
+#### chrome 离线安装方法
 1. 前往 [Release 页面](https://github.com/DukeLuo/wai/releases)下载最新版本 `zip` 文件并解压
 2. 打开 Chrome 扩展程序管理器 `chrome://extensions`
 3. 勾选`开发者模式`

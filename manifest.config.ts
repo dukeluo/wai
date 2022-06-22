@@ -1,7 +1,7 @@
 export default {
   manifest_version: 3,
   name: '歪脖子新标签页',
-  description: '一款可以预防颈椎病的新标签页扩展。',
+  description: '一款可以预防颈椎病的新标签页扩展',
   version: process.env.npm_package_version,
   author: 'Duke Luo <dukeluo@outlook.com> (https://shaiwang.life)',
   homepage_url: 'https://github.com/DukeLuo/wai',
