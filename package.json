@@ -47,7 +47,7 @@
     "postcss-html": "1.4.1",
     "prettier": "2.6.2",
     "sass": "1.52.1",
-    "stylelint": "14.8.0",
+    "stylelint": "14.9.1",
     "stylelint-config-prettier": "9.0.3",
     "stylelint-config-recommended-scss": "6.0.0",
     "stylelint-config-recommended-vue": "1.4.0",
