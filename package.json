@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "normalize.css": "8.0.1",
-    "vue": "3.2.33"
+    "vue": "3.2.37"
   },
   "devDependencies": {
     "@types/node": "17.0.40",
