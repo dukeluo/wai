@@ -42,7 +42,7 @@
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-check-file": "1.1.0",
     "eslint-plugin-prettier": "4.0.0",
-    "eslint-plugin-vue": "8.7.1",
+    "eslint-plugin-vue": "9.1.1",
     "husky": "7.0.4",
     "postcss-html": "1.4.1",
     "prettier": "2.7.1",
