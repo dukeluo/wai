@@ -6,8 +6,12 @@ import datetime
 import re
 import json
 
+EVENT_MAX_LENGTH = 200
+
+
 def getCurrentYear():
     return datetime.datetime.now().year
+
 
 def getDateList():
     year = getCurrentYear()
@@ -21,10 +25,11 @@ def getDateList():
 
     return list
 
+
 def getEventText(year, event):
     text = "%s：%s" % (year, event)
     text = re.sub(r"\[\S*?\]", "", text)  # 去除引用标记
-    text = text.strip("。") # 去除末尾句号
+    text = text.strip("。；")  # 去除末尾符号
 
     return text
 
@@ -36,22 +41,26 @@ def parseLiItem(liItem):
 
     if match:
         year = match.group(1)
-        events = match.group(3).strip().split("\n")
+        events = filter(lambda x: len(x) < EVENT_MAX_LENGTH,
+                        match.group(3).strip().split("\n"))
         list = map(lambda x: getEventText(year, x), events)
 
     return list
 
+
 def getDayEvents(html):
-    match = re.compile("(<span class=\"mw-headline\" id=\"大事[记記纪紀]\">[\s\S]*?)<h2>").search(html)
+    match = re.compile(
+        "(<span class=\"mw-headline\" id=\"大事[记記纪紀]\">[\s\S]*?)<h2>").search(html)
     list = []
 
     if match:
         bsObj = BeautifulSoup(match.group(1), "html.parser").findAll("li")
         for li in bsObj:
             list.extend(parseLiItem(li))
-    print("共有 %s 条" %  list.__len__())
+    print("共有 %s 条" % list.__len__())
 
     return list
+
 
 def main():
     dateList = getDateList()
@@ -69,6 +78,7 @@ def main():
 
     with open("../src/data/today_in_history.json", "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
+
 
 if __name__ == "__main__":
     main()
