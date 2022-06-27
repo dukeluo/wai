@@ -51,7 +51,7 @@
     "stylelint-config-recommended-scss": "6.0.0",
     "stylelint-config-recommended-vue": "1.4.0",
     "typescript": "4.7.4",
-    "vite": "2.9.12",
+    "vite": "2.9.13",
     "vite-plugin-css-injected-by-js": "1.5.1",
     "vite-plugin-vue-type-imports": "0.2.0",
     "vue-tsc": "0.38.2"
