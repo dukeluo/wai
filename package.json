@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@types/node": "17.0.45",
-    "@typescript-eslint/eslint-plugin": "5.29.0",
+    "@typescript-eslint/eslint-plugin": "5.30.5",
     "@vitejs/plugin-vue": "2.3.3",
     "@vue/eslint-config-typescript": "11.0.0",
     "eslint": "8.18.0",
