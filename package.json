@@ -26,7 +26,7 @@
     "build": "vue-tsc --noEmit && vite build",
     "watch": "vite build --watch",
     "preview": "vite preview",
-    "lint": "eslint --ext .ts,.vue src && stylelint **/*.vue"
+    "lint": "eslint --ext .ts,.vue,.json src && stylelint **/*.vue"
   },
   "dependencies": {
     "normalize.css": "8.0.1",

@@ -26,6 +26,16 @@
       {
         "src/*/": "CAMEL_CASE"
       }
+    ],
+    "check-file/filename-naming-convention": [
+      "error",
+      {
+        "src/components/*.vue": "PASCAL_CASE",
+        "src/composables/*.ts": "CAMEL_CASE",
+        "src/data/*.json": "SNAKE_CASE",
+        "src/helpers/*.ts": "CAMEL_CASE",
+        "src/services/*.ts": "PASCAL_CASE"
+      }
     ]
   }
 }
