@@ -49,7 +49,6 @@ const angle = Math.random().toPrecision(2)
 #container {
   width: 100%;
   height: 100%;
-  background-color: #f7f4e3;
   display: flex;
   align-items: center;
   justify-content: center;
