@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "normalize.css": "8.0.1",
-    "vue": "3.2.38"
+    "vue": "3.2.39"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
