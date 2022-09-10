@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { Mode } from '../types'
 
 interface IOption {
@@ -20,6 +20,7 @@ const Mode_Data: IOption[] = [
 const props = defineProps<IModeSelector>()
 const emit = defineEmits(['update:modelValue'])
 const slider = ref<HTMLDivElement>()
+const selectedIndex = computed(() => Mode_Data.findIndex((mode) => mode.value === props.modelValue))
 
 const onSelect = (option: IOption, index: number) => {
   if (slider.value) {
@@ -27,8 +28,6 @@ const onSelect = (option: IOption, index: number) => {
   }
   emit('update:modelValue', option.value)
 }
-
-const getSelectedIndex = () => Mode_Data.findIndex((mode) => mode.value === props.modelValue)
 </script>
 
 <template>
@@ -37,13 +36,13 @@ const getSelectedIndex = () => Mode_Data.findIndex((mode) => mode.value === prop
       <li
         v-for="(option, index) in Mode_Data"
         :key="option.value"
-        :class="{ selected: index === getSelectedIndex() }"
+        :class="{ selected: index === selectedIndex }"
         @click="onSelect(option, index)"
       >
         {{ option.label }}
       </li>
     </ul>
-    <div ref="slider" class="slider" :style="{ transform: `translateX(${100 * getSelectedIndex()}%)` }"></div>
+    <div ref="slider" class="slider" :style="{ transform: `translateX(${100 * selectedIndex}%)` }"></div>
   </section>
 </template>
 
