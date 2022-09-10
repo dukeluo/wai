@@ -51,3 +51,9 @@ export type SeasonFood = {
 export interface IContentBaseProps {
   date: Date
 }
+
+export enum Mode {
+  Full,
+  Continuous,
+  Soft,
+}

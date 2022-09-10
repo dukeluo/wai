@@ -5,10 +5,14 @@ import { withPx } from '../helpers/style'
 import DateTime from '../components/DateTime.vue'
 import TodayEvent from '../components/TodayEvent.vue'
 import SeasonFood from '../components/SeasonFood.vue'
+import ModeSelector from '../components/ModeSelector.vue'
+import { Mode } from '../types'
+import { ref } from 'vue'
 
 const { moment } = useMoment()
 const { leftRef, rightWidth } = useContentLayout()
 const angle = Math.random().toPrecision(2)
+const mode = ref<Mode>(Mode.Full)
 </script>
 
 <template>
@@ -35,6 +39,9 @@ const angle = Math.random().toPrecision(2)
     </section>
     <section id="about">
       <a href="https://github.com/DukeLuo/wai" target="_blank"><img src="/icons/about.svg" alt="About" /></a>
+    </section>
+    <section id="setting">
+      <ModeSelector v-model="mode" />
     </section>
   </main>
 </template>
@@ -74,18 +81,19 @@ const angle = Math.random().toPrecision(2)
 }
 
 #about {
-  width: 64px;
-  height: 64px;
   position: absolute;
-  top: 0px;
-  right: 0px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  top: 16px;
+  right: 16px;
 
   img {
     width: 24px;
     height: 24px;
   }
+}
+
+#setting {
+  position: absolute;
+  bottom: 32px;
+  right: 16px;
 }
 </style>
