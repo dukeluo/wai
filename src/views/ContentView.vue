@@ -47,8 +47,6 @@ const mode = ref<Mode>(Mode.Full)
 </template>
 
 <style lang="scss" scoped>
-@import '../styles/info-card.scss';
-
 .column {
   display: inline-block;
 }

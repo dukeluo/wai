@@ -1,3 +1,24 @@
+<script setup lang="ts">
+interface IContentCardProps {
+  title: string
+  items: string[]
+}
+
+const props = defineProps<IContentCardProps>()
+</script>
+
+<template>
+  <section class="card">
+    <h2 class="title">{{ props.title }}</h2>
+    <section class="items">
+      <p v-for="(item, index) in props.items" :key="index" class="item">
+        {{ item }}
+      </p>
+    </section>
+  </section>
+</template>
+
+<style lang="scss" scoped>
 .card {
   p {
     font-size: 18px;
@@ -32,3 +53,4 @@
     }
   }
 }
+</style>

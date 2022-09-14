@@ -3,6 +3,7 @@ import _seasonFoodData from '../data/season_food.json'
 import { getMonth } from '../helpers/date'
 import { shuffle } from '../helpers/shuffle'
 import type { IContentBaseProps, Month, SeasonFood } from '../types'
+import ContentCard from './ContentCard.vue'
 
 const props = defineProps<IContentBaseProps>()
 const seasonFoodData = _seasonFoodData as SeasonFood
@@ -13,19 +14,8 @@ const fruitsForDisplay = shuffle(fruits).slice(0, 8)
 </script>
 
 <template>
-  <section class="card">
-    <h2 class="title">这个季节吃什么</h2>
-    <section class="items">
-      <p class="item"><span class="hightlight">蔬菜：</span>{{ vegetablesForDisplay.join('、') }}</p>
-      <p class="item"><span class="hightlight">水果：</span>{{ fruitsForDisplay.join('、') }}</p>
-    </section>
-  </section>
+  <ContentCard
+    title="这个季节吃什么"
+    :items="[vegetablesForDisplay.join('、'), fruitsForDisplay.join('、')]"
+  ></ContentCard>
 </template>
-
-<style lang="scss" scoped>
-@import '../styles/info-card.scss';
-
-.hightlight {
-  font-weight: bold;
-}
-</style>
