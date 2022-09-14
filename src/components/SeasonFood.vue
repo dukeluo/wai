@@ -2,10 +2,15 @@
 import _seasonFoodData from '../data/season_food.json'
 import { getMonth } from '../helpers/date'
 import { shuffle } from '../helpers/shuffle'
-import type { IContentBaseProps, Month, SeasonFood } from '../types'
+import type { Month, SeasonFood } from '../types'
 import ContentCard from './ContentCard.vue'
 
-const props = defineProps<IContentBaseProps>()
+interface ISeasonFoodProps {
+  date: Date
+  isReversed: boolean
+}
+
+const props = defineProps<ISeasonFoodProps>()
 const seasonFoodData = _seasonFoodData as SeasonFood
 const month = getMonth(props.date).toString() as Month
 const { vegetables, fruits } = seasonFoodData[month]
@@ -17,5 +22,6 @@ const fruitsForDisplay = shuffle(fruits).slice(0, 8)
   <ContentCard
     title="这个季节吃什么"
     :items="[vegetablesForDisplay.join('、'), fruitsForDisplay.join('、')]"
+    :is-reversed="props.isReversed"
   ></ContentCard>
 </template>

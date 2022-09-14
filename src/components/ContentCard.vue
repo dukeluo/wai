@@ -2,6 +2,7 @@
 interface IContentCardProps {
   title: string
   items: string[]
+  isReversed: boolean
 }
 
 const props = defineProps<IContentCardProps>()
@@ -9,8 +10,8 @@ const props = defineProps<IContentCardProps>()
 
 <template>
   <section class="card">
-    <h2 class="title">{{ props.title }}</h2>
-    <section class="items">
+    <h2 :class="{ title: true, reversed: props.isReversed }">{{ props.title }}</h2>
+    <section :class="{ items: true, reversed: props.isReversed }">
       <p v-for="(item, index) in props.items" :key="index" class="item">
         {{ item }}
       </p>
@@ -30,15 +31,16 @@ const props = defineProps<IContentCardProps>()
     margin: 0 0 8px;
     font-size: 24px;
     line-height: 1.2;
-    text-align: right;
     color: #e81c27;
     padding-bottom: 8px;
     border-bottom: 8px solid black;
+
+    &.reversed {
+      text-align: right;
+    }
   }
 
   .items {
-    transform: rotate(0.5turn);
-
     .item {
       &::before {
         content: '';
@@ -50,6 +52,10 @@ const props = defineProps<IContentCardProps>()
         margin-right: 8px;
         background-color: black;
       }
+    }
+
+    &.reversed {
+      transform: rotate(0.5turn);
     }
   }
 }
