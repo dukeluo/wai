@@ -57,3 +57,15 @@ export enum Mode {
   Continuous,
   Soft,
 }
+
+export interface IModeConfig {
+  turn: () => number
+  isReversed: boolean
+  interval: number
+}
+
+export interface IModeConfigValue {
+  turn: number
+  isReversed: boolean
+  interval: number
+}

@@ -6,13 +6,12 @@ import DateTime from '../components/DateTime.vue'
 import TodayEvent from '../components/TodayEvent.vue'
 import SeasonFood from '../components/SeasonFood.vue'
 import ModeSelector from '../components/ModeSelector.vue'
-import { Mode } from '../types'
-import { ref } from 'vue'
+import { useMode } from '../composables/useMode'
 
 const { moment } = useMoment()
 const { leftRef, rightWidth } = useContentLayout()
-const angle = Math.random().toPrecision(2)
-const mode = ref<Mode>(Mode.Full)
+
+const { mode, config } = useMode()
 </script>
 
 <template>
@@ -20,12 +19,12 @@ const mode = ref<Mode>(Mode.Full)
     <section
       id="content"
       :style="{
-        transform: `rotate(${angle}turn)`,
+        transform: `rotate(${config.turn}turn)`,
       }"
     >
       <section id="left" ref="leftRef" class="column">
         <DateTime :date="moment" />
-        <TodayEvent :date="moment" />
+        <TodayEvent :date="moment" :is-reversed="config.isReversed" />
       </section>
       <section
         id="right"
@@ -34,7 +33,7 @@ const mode = ref<Mode>(Mode.Full)
           width: withPx(rightWidth),
         }"
       >
-        <SeasonFood :date="moment" />
+        <SeasonFood :date="moment" :is-reversed="config.isReversed" />
       </section>
     </section>
     <section id="about">
