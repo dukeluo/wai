@@ -11,7 +11,7 @@ interface IModeSelector {
   modelValue: Mode
 }
 
-const Mode_Data: IOption[] = [
+const MODE_OPTIONS: IOption[] = [
   { label: '柔和模式', value: Mode.Soft },
   { label: '连续模式', value: Mode.Continuous },
   { label: '全面模式', value: Mode.Full },
@@ -20,7 +20,7 @@ const Mode_Data: IOption[] = [
 const props = defineProps<IModeSelector>()
 const emit = defineEmits(['update:modelValue'])
 const slider = ref<HTMLDivElement>()
-const selectedIndex = computed(() => Mode_Data.findIndex((mode) => mode.value === props.modelValue))
+const selectedIndex = computed(() => MODE_OPTIONS.findIndex((mode) => mode.value === props.modelValue))
 
 const onSelect = (option: IOption, index: number) => {
   if (slider.value) {
@@ -34,7 +34,7 @@ const onSelect = (option: IOption, index: number) => {
   <section id="mode-selector">
     <ul>
       <li
-        v-for="(option, index) in Mode_Data"
+        v-for="(option, index) in MODE_OPTIONS"
         :key="option.value"
         :class="{ selected: index === selectedIndex }"
         @click="onSelect(option, index)"
