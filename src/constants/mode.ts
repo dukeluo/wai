@@ -1,6 +1,7 @@
 import { Mode } from '../types'
+import type { IModeConfig } from '../types'
 
-export const MODE_CONFIG = {
+export const MODE_CONFIG: { [m in Mode]: IModeConfig } = {
   [Mode.Full]: {
     turn: () => Math.round(Math.random() * 100) / 100,
     isReversed: true,
