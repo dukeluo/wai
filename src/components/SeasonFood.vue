@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import _seasonFoodData from '../data/season_food.json'
 import { getMonth } from '../helpers/date'
-import { shuffle } from '../helpers/shuffle'
+import { shuffle } from '../helpers/random'
 import type { Month, SeasonFood } from '../types'
 import ContentCard from './ContentCard.vue'
 
