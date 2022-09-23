@@ -15,4 +15,5 @@ export default {
     '64': 'icons/logo64.png',
     '128': 'icons/logo128.png',
   },
+  permissions: ['storage'],
 }

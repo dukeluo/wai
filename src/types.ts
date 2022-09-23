@@ -53,9 +53,9 @@ export interface IContentBaseProps {
 }
 
 export enum Mode {
-  Full,
-  Continuous,
-  Soft,
+  Full = 'full',
+  Continuous = 'continuous',
+  Soft = 'soft',
 }
 
 export interface IModeConfig {

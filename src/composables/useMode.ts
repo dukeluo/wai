@@ -1,7 +1,10 @@
-import { ref, onBeforeUnmount, watch, reactive, computed } from 'vue'
+import { ref, onBeforeUnmount, watch, reactive, computed, onBeforeMount } from 'vue'
 import { MODE_CONFIG } from '../constants/mode'
 import type { IModeConfig, IModeConfigValue } from '../types'
 import { Mode } from '../types'
+import { storage } from '../helpers/storage'
+
+const MODE_KEY = 'setting.mode'
 
 const getConfigValue = ({ turn, isReversed, interval }: IModeConfig): IModeConfigValue => ({
   turn: turn(),
@@ -10,7 +13,7 @@ const getConfigValue = ({ turn, isReversed, interval }: IModeConfig): IModeConfi
 })
 
 export const useMode = () => {
-  const mode = ref(Mode.Full)
+  const mode = ref<Mode>(Mode.Full)
   const config = computed(() => MODE_CONFIG[mode.value])
   const value = reactive(getConfigValue(config.value))
   let timer: NodeJS.Timeout
@@ -27,13 +30,21 @@ export const useMode = () => {
 
   const clear = () => timer && clearTimeout(timer)
 
-  watch(mode, () => {
+  watch(mode, (m) => {
     const newValue = update()
 
     clear()
+    storage.setItem(MODE_KEY, m)
+
     if (newValue.interval > 0) {
       timer = setInterval(update, newValue.interval * 1000)
     }
+  })
+
+  onBeforeMount(async () => {
+    const settingMode = (await storage.getItem(MODE_KEY)) as Mode | null
+
+    mode.value = settingMode ?? Mode.Full
   })
 
   onBeforeUnmount(clear)
