@@ -9,6 +9,7 @@ import ContentView from './views/ContentView.vue'
 <style>
 body {
   font-family: 'Hiragino Sans GB', sans-serif;
+  font-size: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #f7f4e3;
