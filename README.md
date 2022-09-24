@@ -18,6 +18,7 @@
 
 ### 功能
 - 活动脖子，预防颈椎病
+- 三种模式支持，强度自己选择
 - 休息日指南，快速知晓下一个休息日
 - 当季蔬果提示，健康饮食每一天
 - 历史上的今天，回顾历史长河
@@ -29,5 +30,7 @@
 - 当季蔬果的数据来自知乎「一年 12 个月对应的应季时令水果蔬菜有哪些？」中[果蔬百科的回答](https://www.zhihu.com/question/21026884/answer/243125996)。
 - 历史上的今天的数据来自维基百科[历史上的今天](https://zh.m.wikipedia.org/zh-cn/%E5%8E%86%E5%8F%B2%E4%B8%8A%E7%9A%84%E4%BB%8A%E5%A4%A9)。
 
-### 开发计划
-[「歪脖子新标签页」开发计划](https://github.com/DukeLuo/wai/projects/1)
+### 其他
+- [「歪脖子新标签页」 Issue 列表](https://github.com/DukeLuo/wai/issues)
+- [「歪脖子新标签页」讨论吐槽区](https://github.com/DukeLuo/wai/discussions)
+- [「歪脖子新标签页」开发计划](https://github.com/DukeLuo/wai/projects/1)
