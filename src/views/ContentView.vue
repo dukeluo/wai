@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { useContentLayout } from '../composables/useContentLayout'
 import { useMoment } from '../composables/useMoment'
-import { withPx } from '../helpers/style'
 import DateTime from '../components/DateTime.vue'
 import TodayEvent from '../components/TodayEvent.vue'
 import SeasonFood from '../components/SeasonFood.vue'
@@ -30,7 +29,7 @@ const { mode, config } = useMode()
         id="right"
         class="column"
         :style="{
-          width: withPx(rightWidth),
+          width: `${rightWidth}px`,
         }"
       >
         <SeasonFood :date="moment" :is-reversed="config.isReversed" />
