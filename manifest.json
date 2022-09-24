@@ -14,5 +14,8 @@
     "48": "icons/logo48.png",
     "64": "icons/logo64.png",
     "128": "icons/logo128.png"
-  }
+  },
+  "permissions": [
+    "storage"
+  ]
 }
