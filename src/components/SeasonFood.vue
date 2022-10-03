@@ -14,8 +14,8 @@ const props = defineProps<ISeasonFoodProps>()
 const seasonFoodData = _seasonFoodData as SeasonFood
 const month = getMonth(props.date).toString() as Month
 const { vegetables, fruits } = seasonFoodData[month]
-const vegetablesForDisplay = shuffle(vegetables).slice(0, 8)
-const fruitsForDisplay = shuffle(fruits).slice(0, 8)
+const vegetablesForDisplay = shuffle(vegetables).slice(0, 9)
+const fruitsForDisplay = shuffle(fruits).slice(0, 9)
 </script>
 
 <template>
