@@ -4,7 +4,9 @@ import type { Day, Month, YearInHistory } from '../types'
 
 const todayInHistoryData = _todayInHistoryData as YearInHistory
 
-const MAX_EVENT_CHAR_COUNT = 250
+const MAX_CHAR_PER_LINE = 22
+const MAX_LINE = 14
+const MIN_LINE = 12
 
 export const useGetTodayDisplayedEvents = (date: Date): string[] => {
   const month = getMonth(date).toString() as Month
@@ -12,14 +14,17 @@ export const useGetTodayDisplayedEvents = (date: Date): string[] => {
   const todayHistoryEvents = todayInHistoryData[month][day] ?? []
   const events: string[] = []
   let index = Math.floor(Math.random() * todayHistoryEvents.length)
-  let counter = 0
+  let lineCounter = 0
 
-  while (counter + todayHistoryEvents[index].length <= MAX_EVENT_CHAR_COUNT) {
+  while (lineCounter < MIN_LINE) {
     const event = todayHistoryEvents[index]
+    const rows = Math.ceil(event.length / MAX_CHAR_PER_LINE)
 
-    events.push(event)
+    if (lineCounter + rows < MAX_LINE) {
+      events.push(event)
+      lineCounter += rows
+    }
     index = (index + 1) % todayHistoryEvents.length
-    counter += event.length
   }
 
   return events
