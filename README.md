@@ -23,6 +23,11 @@
 - 当季蔬果提示，健康饮食每一天
 - 历史上的今天，回顾历史长河
 
+#### 工作模式
+- 柔和模式：每次触发时内容小范围摆动，标题和主体不颠倒展示
+- 连续模式：标题和主体不颠倒展示，每隔 4s 自动左右摆动
+- 全面模式：每次触发时内容随机角度摆动，标题和主体颠倒展示，为插件默认模式
+
 ### 鸣谢
 歪脖子新标签页的诞生离不开以下资源的帮助，特感谢以下资源的提供：
 - 本应用图标由<a href="https://pixabay.com/zh/users/openclipart-vectors-30363/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=147345"> OpenClipart-Vectors </a>在<a href="https://pixabay.com/zh/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=147345"> Pixabay </a>上发布。
