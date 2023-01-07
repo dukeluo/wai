@@ -16,4 +16,9 @@ export default {
     '128': 'icons/logo128.png',
   },
   permissions: ['storage'],
+  browser_specific_settings: {
+    gecko: {
+      id: '{8ff02995-1ecd-4d77-9b1c-f4994f9ae70f}',
+    },
+  },
 }
