@@ -17,5 +17,10 @@
   },
   "permissions": [
     "storage"
-  ]
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "dukeluo@outlook.com"
+    }
+  }
 }
