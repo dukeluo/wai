@@ -38,10 +38,11 @@ jobs:
             wai-v${{ steps.package-version.outputs.current-version }}.zip
             wai-v${{ steps.package-version.outputs.current-version }}.crx
       - name: Upload to Chrome Web Store
-        uses: trmcnvn/chrome-addon@v2
+        uses: mnao305/chrome-extension-upload@v4.0.1
         with:
-          extension: ackimleclkemolnfcfajficenpbnaiba
-          zip: 'wai-v${{ steps.package-version.outputs.current-version }}.zip'
+          extension-id: ackimleclkemolnfcfajficenpbnaiba
+          file-path: 'wai-v${{ steps.package-version.outputs.current-version }}.zip'
           client-id: ${{ secrets.CHROME_CLIENT_ID }}
           client-secret: ${{ secrets.CHROME_CLIENT_SECRET }}
           refresh-token: ${{ secrets.CHROME_REFRESH_TOKEN }}
+          publish: false
