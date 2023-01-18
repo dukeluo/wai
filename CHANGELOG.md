@@ -1,5 +1,16 @@
 # 更新日志
 
+## [1.3.0](https://github.com/DukeLuo/wai/compare/v1.1.0...v1.3.0) - 2023-01-18
+
+### 新增
+- 上架 Add-ons for Firefox，支持 Firefox 浏览器
+
+### 变化
+- 更新「历史上的今天」数据
+
+### 修复
+- 修复在线版模式选择功能在 Chrome 浏览器不可用问题
+
 ## [1.1.0](https://github.com/DukeLuo/wai/compare/v1.0.0...v1.1.0) - 2022-10-5
 
 ### 新增
