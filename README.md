@@ -33,4 +33,4 @@
 ### 其他
 - [「歪脖子新标签页」 Issue 列表](https://github.com/DukeLuo/wai/issues)
 - [「歪脖子新标签页」讨论吐槽区](https://github.com/DukeLuo/wai/discussions)
-- [「歪脖子新标签页」开发计划](https://github.com/DukeLuo/wai/projects/1)
+- [「歪脖子新标签页」开发计划](https://github.com/users/DukeLuo/projects/2)
