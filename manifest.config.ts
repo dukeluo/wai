@@ -3,7 +3,7 @@ export default {
   name: '歪脖子新标签页',
   description: '一款可以预防颈椎病的新标签页扩展',
   version: process.env.npm_package_version,
-  author: 'Duke Luo <dukeluo@outlook.com> (https://shaiwang.life)',
+  author: 'Huan Luo <dukeluo@outlook.com> (https://shaiwang.life)',
   homepage_url: 'https://github.com/DukeLuo/wai',
   chrome_url_overrides: {
     newtab: 'index.html',
