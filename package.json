@@ -16,6 +16,10 @@
     "cervical spondylosis"
   ],
   "author": "Huan Luo <dukeluo@outlook.com> (https://shaiwang.life)",
+  "funding": {
+    "type": "ko_fi",
+    "url": "https://ko-fi.com/huanluo"
+  },
   "license": "MPL-2.0",
   "bugs": {
     "url": "https://github.com/DukeLuo/wai/issues"
