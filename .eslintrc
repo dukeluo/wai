@@ -13,14 +13,15 @@
     "@vue/typescript/recommended",
     "prettier"
   ],
-  "plugins": [
-    "@typescript-eslint",
-    "prettier",
-    "check-file"
-  ],
+  "plugins": ["@typescript-eslint", "prettier", "check-file"],
   "rules": {
     "prettier/prettier": "error",
-    "check-file/no-index": "error",
+    "check-file/no-index": [
+      "error",
+      {
+        "ignoreMiddleExtensions": true
+      }
+    ],
     "check-file/folder-naming-convention": [
       "error",
       {
