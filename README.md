@@ -38,18 +38,14 @@
 
 ### 支持作者
 
-<div>
-<img width="200" height="200" src="./.github/assets/donation.webp">
-<img width="200" height="200" src="./.github/assets/ByteLaughs.webp">
+<div style="display: flex; align-items: center">
+<img style="margin: 2px" width="200" height="200" src="./.github/assets/ByteLaughs.webp">
+<img style="margin: 2px" width="200" height="200" src="./.github/assets/donation.webp">
+<a href="https://ko-fi.com/huanluo"><img style="margin: 2px" width="200" src="./.github/assets/ko-fi.webp"></a>
 </div>
-
-[![Donate][ko-fi-image]][ko-fi-url]
 
 ### 其他
 
 - [「歪脖子新标签页」 Issue 列表](https://github.com/DukeLuo/wai/issues)
 - [「歪脖子新标签页」讨论吐槽区](https://github.com/DukeLuo/wai/discussions)
 - [「歪脖子新标签页」开发计划](https://github.com/users/DukeLuo/projects/2)
-
-[ko-fi-image]: https://ko-fi.com/img/githubbutton_sm.svg
-[ko-fi-url]: https://ko-fi.com/huanluo
