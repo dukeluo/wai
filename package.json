@@ -34,7 +34,6 @@
     "lint": "eslint --ext .ts,.vue,.json src && stylelint **/*.vue"
   },
   "dependencies": {
-    "normalize.css": "8.0.1",
     "vue": "3.2.37"
   },
   "devDependencies": {
