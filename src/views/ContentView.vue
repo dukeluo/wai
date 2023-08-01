@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useContentLayout } from '../composables/useContentLayout'
 import { useMoment } from '../composables/useMoment'
 import DateTime from '../components/DateTime.vue'
 import TodayEvent from '../components/TodayEvent.vue'
@@ -8,8 +7,6 @@ import ModeSelector from '../components/ModeSelector.vue'
 import { useMode } from '../composables/useMode'
 
 const { moment } = useMoment()
-const { leftRef, rightWidth } = useContentLayout()
-
 const { mode, config } = useMode()
 </script>
 
@@ -21,17 +18,13 @@ const { mode, config } = useMode()
         transform: `rotate(${config.turn}turn)`,
       }"
     >
-      <section id="left" ref="leftRef" class="column">
+      <section id="w1">
         <DateTime :date="moment" />
+      </section>
+      <section id="w2">
         <TodayEvent :date="moment" :is-reversed="config.isReversed" />
       </section>
-      <section
-        id="right"
-        class="column"
-        :style="{
-          width: `${rightWidth}px`,
-        }"
-      >
+      <section id="w3">
         <SeasonFood :date="moment" :is-reversed="config.isReversed" />
       </section>
     </section>
@@ -45,35 +38,41 @@ const { mode, config } = useMode()
 </template>
 
 <style lang="scss" scoped>
-.column {
-  display: inline-block;
-}
-
 #container {
-  width: 100%;
-  height: 100%;
+  width: inherit;
+  height: inherit;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 #content {
-  display: flex;
-  align-items: center;
-  position: relative;
-  padding-right: 144px;
+  margin: auto;
+  width: 66vh;
+  height: 66vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    'w1  w1  w1  w3'
+    'w2  w2  w2  w3'
+    'w2  w2  w2  w3';
+  overflow: hidden;
 }
 
-#left {
-  width: 420px;
+#w1 {
+  grid-area: w1;
 }
 
-#right {
-  transform: rotate(0.75turn) translate(-100%, 0);
-  transform-origin: left top;
-  position: absolute;
-  top: 0px;
-  left: 444px;
+#w2 {
+  grid-area: w2;
+}
+
+#w3 {
+  grid-area: w3;
+  transform: rotate(-180deg);
+  writing-mode: vertical-rl;
+  text-orientation: sideways;
 }
 
 #about {

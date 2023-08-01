@@ -23,5 +23,6 @@ const fruitsForDisplay = shuffle(fruits).slice(0, 9)
     title="这个季节吃什么"
     :items="[vegetablesForDisplay.join('、'), fruitsForDisplay.join('、')]"
     :is-reversed="props.isReversed"
+    :in-w3="true"
   ></ContentCard>
 </template>
