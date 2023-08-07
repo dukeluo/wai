@@ -8,9 +8,9 @@ interface IToadyEventProps {
 }
 
 const props = defineProps<IToadyEventProps>()
-const eventsForDisplay = useGetTodayDisplayedEvents(props.date)
+const { events, cardRef } = useGetTodayDisplayedEvents(props.date)
 </script>
 
 <template>
-  <ContentCard title="历史上的今天" :items="eventsForDisplay" :is-reversed="props.isReversed"></ContentCard>
+  <ContentCard ref="cardRef" title="历史上的今天" :items="events" :is-reversed="props.isReversed"></ContentCard>
 </template>
