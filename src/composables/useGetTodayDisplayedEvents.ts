@@ -8,11 +8,11 @@ import ContentCard from '../components/ContentCard.vue'
 const todayInHistoryData = _todayInHistoryData as YearInHistory
 
 export const useGetTodayDisplayedEvents = (date: Date) => {
-  const cardRef = ref<InstanceType<typeof ContentCard>>()
   const month = getMonth(date).toString() as Month
   const day = getDay(date).toString() as Day
   const todayHistoryEvents = todayInHistoryData[month][day] ?? []
-  const events: string[] = []
+  const cardRef = ref<InstanceType<typeof ContentCard>>()
+  const events = ref<string[]>([])
   let index = Math.floor(Math.random() * todayHistoryEvents.length)
 
   onMounted(() => {
@@ -30,7 +30,7 @@ export const useGetTodayDisplayedEvents = (date: Date) => {
 
       currentHeight += height
       if (currentHeight > maxHeight) break
-      events.push(event)
+      events.value.push(event)
       index = (index + 1) % todayHistoryEvents.length
     }
   })
