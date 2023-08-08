@@ -1,15 +1,19 @@
 export function measureParagraph(container: HTMLElement, content: string) {
-  const tempParagraph = document.createElement('p')
+  const dataAttr = container.getAttributeNames().find((i) => i.startsWith('data-'))
+  const tempContainer = document.createElement('div')
+  const htmlString = `<p ${dataAttr} style="visibility: hidden; pointer-events: none;"><span ${dataAttr}>• </span>${content}</p>`
 
-  tempParagraph.style.visibility = 'hidden'
-  tempParagraph.style.pointerEvents = 'none'
-  tempParagraph.textContent = '•' + content
-  container.appendChild(tempParagraph)
+  tempContainer.innerHTML = htmlString
 
-  const width = tempParagraph.clientWidth
-  const height = tempParagraph.clientHeight
+  const p = tempContainer.firstElementChild
 
-  container.removeChild(tempParagraph)
+  if (!p) return { width: 0, height: 0 }
+
+  container.appendChild(p)
+  const width = p.clientWidth
+  const height = p.clientHeight
+
+  container.removeChild(p)
 
   return { width, height }
 }

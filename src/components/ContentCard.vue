@@ -36,7 +36,7 @@ defineExpose<IContentCardApis>({ containerRef, contentRef })
       {{ props.title }}
     </h2>
     <section ref="contentRef" :class="{ items: true, reversed: props.isReversed }">
-      <p v-for="(item, index) in props.items" :key="index"><span>&bull;</span> {{ item }}</p>
+      <p v-for="(item, index) in props.items" :key="index"><span>&bull; </span>{{ item }}</p>
     </section>
   </section>
 </template>
