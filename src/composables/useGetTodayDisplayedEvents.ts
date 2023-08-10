@@ -17,12 +17,15 @@ export const useGetTodayDisplayedEvents = (date: Date) => {
 
   onMounted(() => {
     const container = cardRef.value?.containerRef
+    const title = cardRef.value?.titleRef
     const content = cardRef.value?.contentRef
 
-    if (!container || !content) return
+    if (!container || !content || !title) return
 
-    const maxHeight = container.clientHeight - 52
-    let currentHeight = content.clientHeight
+    const { marginTop: titleMarginTop, marginBottom: titleMarginBottom } = window.getComputedStyle(title)
+    const titleHeight = Math.round(title.offsetHeight + parseFloat(titleMarginTop) + parseFloat(titleMarginBottom))
+    const maxHeight = container.offsetHeight - titleHeight
+    let currentHeight = content.offsetHeight
 
     while (true) {
       const event = todayHistoryEvents[index]

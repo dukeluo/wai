@@ -10,8 +10,26 @@ export function measureParagraph(container: HTMLElement, content: string) {
   if (!p) return { width: 0, height: 0 }
 
   container.appendChild(p)
-  const width = p.clientWidth
-  const height = p.clientHeight
+
+  const computedStyle = window.getComputedStyle(p)
+  const width = Math.round(
+    parseFloat(computedStyle.width) +
+      parseFloat(computedStyle.paddingLeft) +
+      parseFloat(computedStyle.paddingRight) +
+      parseFloat(computedStyle.borderLeftWidth) +
+      parseFloat(computedStyle.borderRightWidth) +
+      parseFloat(computedStyle.marginLeft) +
+      parseFloat(computedStyle.marginRight)
+  )
+  const height = Math.round(
+    parseFloat(computedStyle.height) +
+      parseFloat(computedStyle.paddingTop) +
+      parseFloat(computedStyle.paddingBottom) +
+      parseFloat(computedStyle.borderTopWidth) +
+      parseFloat(computedStyle.borderBottomWidth) +
+      parseFloat(computedStyle.marginTop) +
+      parseFloat(computedStyle.marginBottom)
+  )
 
   container.removeChild(p)
 

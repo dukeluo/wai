@@ -10,11 +10,13 @@ interface IContentCardProps {
 
 interface IContentCardApis {
   containerRef: Ref<HTMLElement | undefined>
+  titleRef: Ref<HTMLElement | undefined>
   contentRef: Ref<HTMLElement | undefined>
 }
 
 const props = defineProps<IContentCardProps>()
 const containerRef = ref<HTMLElement>()
+const titleRef = ref<HTMLElement>()
 const contentRef = ref<HTMLElement>()
 const titleDefaultStyle = {
   marginBottom: '8px',
@@ -27,12 +29,16 @@ const titleW3Style = {
   borderLeft: '8px solid black',
 }
 
-defineExpose<IContentCardApis>({ containerRef, contentRef })
+defineExpose<IContentCardApis>({ containerRef, titleRef, contentRef })
 </script>
 
 <template>
   <section ref="containerRef" class="card">
-    <h2 :class="{ title: true, reversed: props.isReversed }" :style="props.inW3 ? titleW3Style : titleDefaultStyle">
+    <h2
+      ref="titleRef"
+      :class="{ title: true, reversed: props.isReversed }"
+      :style="props.inW3 ? titleW3Style : titleDefaultStyle"
+    >
       {{ props.title }}
     </h2>
     <section ref="contentRef" :class="{ items: true, reversed: props.isReversed }">
@@ -50,7 +56,7 @@ section.card {
 .card {
   p {
     font-size: 18px;
-    margin: 4px;
+    margin: 0 0 4px 0;
     line-height: 1.4;
   }
 
