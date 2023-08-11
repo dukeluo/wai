@@ -18,42 +18,26 @@ const props = defineProps<IContentCardProps>()
 const containerRef = ref<HTMLElement>()
 const titleRef = ref<HTMLElement>()
 const contentRef = ref<HTMLElement>()
-const titleDefaultStyle = {
-  marginBottom: '8px',
-  paddingBottom: '8px',
-  borderBottom: '8px solid black',
-}
-const titleW3Style = {
-  marginLeft: '8px',
-  paddingLeft: '8px',
-  borderLeft: '8px solid black',
-}
 
 defineExpose<IContentCardApis>({ containerRef, titleRef, contentRef })
 </script>
 
 <template>
-  <section ref="containerRef" class="card">
-    <h2
-      ref="titleRef"
-      :class="{ title: true, reversed: props.isReversed }"
-      :style="props.inW3 ? titleW3Style : titleDefaultStyle"
-    >
+  <section ref="containerRef" class="card" :class="{ w3: props.inW3, reversed: props.isReversed }">
+    <h2 ref="titleRef" class="title">
       {{ props.title }}
     </h2>
-    <section ref="contentRef" :class="{ items: true, reversed: props.isReversed }">
+    <section ref="contentRef" class="items">
       <p v-for="(item, index) in props.items" :key="index"><span>&bull; </span>{{ item }}</p>
     </section>
   </section>
 </template>
 
 <style lang="scss" scoped>
-section.card {
+.card {
   width: 100%;
   height: 100%;
-}
 
-.card {
   p {
     font-size: 18px;
     margin: 0 0 4px 0;
@@ -64,18 +48,38 @@ section.card {
     font-size: 24px;
     line-height: 1.2;
     color: #e81c27;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 8px solid black;
+  }
 
-    &.reversed {
+  .items span {
+    font-weight: bold;
+  }
+
+  &.reversed {
+    .title {
       text-align: right;
+    }
+
+    .items {
+      transform: rotate(0.5turn);
     }
   }
 
-  .items {
-    span {
-      font-weight: bold;
+  &.w3 {
+    p {
+      margin: 0;
+      margin-left: 4px;
     }
-    &.reversed {
-      transform: rotate(0.5turn);
+
+    .title {
+      margin: 0;
+      padding: 0;
+      border: none;
+      margin-left: 8px;
+      padding-left: 8px;
+      border-left: 8px solid black;
     }
   }
 }
