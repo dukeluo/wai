@@ -1,4 +1,4 @@
-export function measureParagraph(container: HTMLElement, content: string) {
+export const measureParagraph = (container: HTMLElement, content: string) => {
   const dataAttr = container.getAttributeNames().find((i) => i.startsWith('data-'))
   const tempContainer = document.createElement('div')
   const htmlString = `<p ${dataAttr} style="visibility: hidden; pointer-events: none;"><span ${dataAttr}>• </span>${content}</p>`
@@ -34,4 +34,26 @@ export function measureParagraph(container: HTMLElement, content: string) {
   container.removeChild(p)
 
   return { width, height }
+}
+
+export const isParagraphMultipleLinesInW3 = (container: HTMLElement, content: string) => {
+  const dataAttr = container.getAttributeNames().find((i) => i.startsWith('data-'))
+  const tempContainer = document.createElement('div')
+  const htmlString = `<p ${dataAttr} style="visibility: hidden; pointer-events: none;"><span ${dataAttr}>• </span>${content}</p>`
+
+  tempContainer.innerHTML = htmlString
+
+  const p = tempContainer.firstElementChild
+
+  if (!p) return false
+
+  container.appendChild(p)
+
+  const computedStyle = window.getComputedStyle(p)
+  const lineHeight = parseInt(computedStyle.lineHeight, 10)
+  const width = parseInt(computedStyle.width, 10)
+
+  container.removeChild(p)
+
+  return lineHeight < width
 }
