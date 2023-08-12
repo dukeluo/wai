@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { onMounted, ref } from 'vue'
 import { useGetTodayDisplayedEvents } from '../composables/useGetTodayDisplayedEvents'
 import ContentCard from './ContentCard.vue'
 
@@ -8,7 +9,18 @@ interface IToadyEventProps {
 }
 
 const props = defineProps<IToadyEventProps>()
-const { events, cardRef } = useGetTodayDisplayedEvents(props.date)
+const cardRef = ref<InstanceType<typeof ContentCard>>()
+const { events } = useGetTodayDisplayedEvents(props.date, cardRef)
+
+onMounted(() => {
+  const container = cardRef.value?.containerRef
+
+  if (!container) return
+
+  container.style.display = 'flex'
+  container.style.flexDirection = 'column'
+  container.style.justifyContent = 'flex-end'
+})
 </script>
 
 <template>
