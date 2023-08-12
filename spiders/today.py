@@ -1,12 +1,11 @@
 # -*- coding: utf_8 -*-
-import requests
-import string
-from bs4 import BeautifulSoup
 import datetime
 import re
 import json
+import requests
+from bs4 import BeautifulSoup
 
-EVENT_MAX_LENGTH = 200
+EVENT_MAX_LENGTH = 64
 
 
 def getCurrentYear():
