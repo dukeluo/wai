@@ -48,8 +48,8 @@ const { mode, config } = useMode()
 
 #content {
   margin: auto;
-  width: 66vh;
-  height: 66vh;
+  width: 60vh;
+  height: 60vh;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
