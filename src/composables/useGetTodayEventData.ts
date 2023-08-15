@@ -7,7 +7,7 @@ import ContentCard from '../components/ContentCard.vue'
 
 const todayInHistoryData = _todayInHistoryData as YearInHistory
 
-export const useGetTodayDisplayedEvents = (date: Date, cardRef: Ref<InstanceType<typeof ContentCard> | undefined>) => {
+export const useGetTodayEventData = (date: Date, cardRef: Ref<InstanceType<typeof ContentCard> | undefined>) => {
   const month = getMonth(date).toString() as Month
   const day = getDay(date).toString() as Day
   const todayHistoryEvents = todayInHistoryData[month][day] ?? []

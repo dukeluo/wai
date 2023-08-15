@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import { useGetTodayDisplayedEvents } from '../composables/useGetTodayDisplayedEvents'
+import { useGetTodayEventData } from '../composables/useGetTodayEventData'
 import ContentCard from './ContentCard.vue'
 
 interface IToadyEventProps {
@@ -10,7 +10,7 @@ interface IToadyEventProps {
 
 const props = defineProps<IToadyEventProps>()
 const cardRef = ref<InstanceType<typeof ContentCard>>()
-const { events } = useGetTodayDisplayedEvents(props.date, cardRef)
+const { events } = useGetTodayEventData(props.date, cardRef)
 
 onMounted(() => {
   const container = cardRef.value?.containerRef
