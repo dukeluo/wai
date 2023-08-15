@@ -12,7 +12,6 @@ export const useGetTodayEventData = (date: Date, cardRef: Ref<InstanceType<typeo
   const day = getDay(date).toString() as Day
   const todayHistoryEvents = todayInHistoryData[month][day] ?? []
   const events = ref<string[]>([])
-  let index = Math.floor(Math.random() * todayHistoryEvents.length)
 
   onMounted(() => {
     const container = cardRef.value?.containerRef
@@ -24,17 +23,25 @@ export const useGetTodayEventData = (date: Date, cardRef: Ref<InstanceType<typeo
     const { marginTop: titleMarginTop, marginBottom: titleMarginBottom } = window.getComputedStyle(title)
     const titleHeight = Math.round(title.offsetHeight + parseFloat(titleMarginTop) + parseFloat(titleMarginBottom))
     const maxHeight = container.offsetHeight - titleHeight
+    const start = Math.floor(Math.random() * todayHistoryEvents.length)
+    const items: string[] = []
     let currentHeight = content.offsetHeight
+    let index = start
 
     while (true) {
       const event = todayHistoryEvents[index]
       const { height } = measureParagraph(content, event)
 
       currentHeight += height
-      if (currentHeight > maxHeight) break
-      events.value.push(event)
+      items.push(event)
+      if (currentHeight > maxHeight) {
+        items.pop()
+        if (index === start) break
+        currentHeight -= height
+      }
       index = (index + 1) % todayHistoryEvents.length
     }
+    events.value = items
   })
 
   return { events }

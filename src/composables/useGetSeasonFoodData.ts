@@ -7,22 +7,23 @@ import type { Month, SeasonFood } from '../types'
 
 const seasonFoodData = _seasonFoodData as SeasonFood
 
-const getRandomFoodString = (container: HTMLElement, foods: string[]): string => {
-  let str = ''
-  let index = Math.floor(Math.random() * foods.length)
+const getRandomFoods = (container: HTMLElement, foods: string[]) => {
+  const start = Math.floor(Math.random() * foods.length)
+  const items: string[] = []
+  let index = start
 
   while (true) {
     const food = foods[index]
 
-    if (isParagraphMultipleLinesInW3(container, `${str}、${food}`)) {
-      break
+    items.push(food)
+    if (isParagraphMultipleLinesInW3(container, items.join('、'))) {
+      items.pop()
+      if (index === start) break
     }
-
-    str += str ? `、${food}` : food
     index = (index + 1) % foods.length
   }
 
-  return str
+  return items
 }
 
 export const useGetSeasonFoodData = (date: Date, cardRef: Ref<InstanceType<typeof ContentCard> | undefined>) => {
@@ -35,8 +36,7 @@ export const useGetSeasonFoodData = (date: Date, cardRef: Ref<InstanceType<typeo
 
     if (!content) return
 
-    data.value.push(getRandomFoodString(content, vegetables))
-    data.value.push(getRandomFoodString(content, fruits))
+    data.value = [getRandomFoods(content, vegetables).join('、'), getRandomFoods(content, fruits).join('、')]
   })
 
   return data
