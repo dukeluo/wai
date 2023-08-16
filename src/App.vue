@@ -52,7 +52,7 @@ body {
 }
 
 html {
-  font-family: 'Hiragino Sans GB', sans-serif;
+  font-family: 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
   font-size: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
