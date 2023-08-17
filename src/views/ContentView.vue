@@ -70,6 +70,7 @@ const { mode, config } = useMode()
 
 #w3 {
   grid-area: w3;
+  justify-self: center;
   transform: rotate(-180deg);
   writing-mode: vertical-rl;
   text-orientation: sideways;

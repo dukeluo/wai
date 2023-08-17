@@ -19,7 +19,7 @@ onMounted(() => {
 
   container.style.display = 'flex'
   container.style.flexDirection = 'column'
-  container.style.justifyContent = 'flex-end'
+  container.style.justifyContent = 'center'
 })
 </script>
 
