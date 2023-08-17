@@ -1,5 +1,35 @@
 <p align="center">
-<img width="128" height="128" src="./public/icons/logo128.png">
+  <img width="128" height="128" src="./public/icons/logo128.png" />
+</p>
+<p align="center">
+  <a
+    href="https://chrome.google.com/webstore/detail/%E6%AD%AA%E8%84%96%E5%AD%90%E6%96%B0%E6%A0%87%E7%AD%BE%E9%A1%B5/ackimleclkemolnfcfajficenpbnaiba"
+    ><img
+      alt="Chrome Web Store Version"
+      src="https://img.shields.io/chrome-web-store/v/ackimleclkemolnfcfajficenpbnaiba?label=Chrome%20Version"
+  /></a>
+  <a
+    href="https://chrome.google.com/webstore/detail/%E6%AD%AA%E8%84%96%E5%AD%90%E6%96%B0%E6%A0%87%E7%AD%BE%E9%A1%B5/ackimleclkemolnfcfajficenpbnaiba"
+  >
+    <img
+      alt="Chrome Web Store Rating"
+      src="https://img.shields.io/chrome-web-store/rating/ackimleclkemolnfcfajficenpbnaiba?label=Chrome%20Rating"
+  /></a>
+  <a
+    href="https://addons.mozilla.org/en-US/firefox/addon/%E6%AD%AA%E8%84%96%E5%AD%90%E6%96%B0%E6%A0%87%E7%AD%BE%E9%A1%B5/"
+  >
+    <img
+      alt="Firefox Add-ons Version"
+      src="https://img.shields.io/amo/v/%7B8ff02995-1ecd-4d77-9b1c-f4994f9ae70f%7D?label=Firefox%20Version"
+    /></a>
+  <a
+    href="https://addons.mozilla.org/en-US/firefox/addon/%E6%AD%AA%E8%84%96%E5%AD%90%E6%96%B0%E6%A0%87%E7%AD%BE%E9%A1%B5/"
+  >
+    <img
+      alt="Firefox Add-ons Rating"
+      src="https://img.shields.io/amo/rating/%7B8ff02995-1ecd-4d77-9b1c-f4994f9ae70f%7D?label=Firefox%20Rating"
+    /></a>
+  <img alt="GitHub" src="https://img.shields.io/github/license/dukeluo/wai" />
 </p>
 
 ## 歪脖子新标签页
