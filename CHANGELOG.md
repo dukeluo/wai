@@ -1,6 +1,6 @@
 # 更新日志
 
-## [1.3.0](https://github.com/DukeLuo/wai/compare/v1.1.0...v1.3.0) - 2023-01-18
+## [1.3.0](https://github.com/dukeluo/wai/compare/v1.1.0...v1.3.0) - 2023-01-18
 
 ### 新增
 - 上架 Add-ons for Firefox，支持 Firefox 浏览器
@@ -11,7 +11,7 @@
 ### 修复
 - 修复在线版模式选择功能在 Chrome 浏览器不可用问题
 
-## [1.1.0](https://github.com/DukeLuo/wai/compare/v1.0.0...v1.1.0) - 2022-10-5
+## [1.1.0](https://github.com/dukeluo/wai/compare/v1.0.0...v1.1.0) - 2022-10-5
 
 ### 新增
 - 三种模式[柔和模式/连续模式/全面模式]支持，强度自己选择
@@ -24,7 +24,7 @@
 - 修复内容时背景没有全面覆盖问题
 
 
-## [1.0.0](https://github.com/DukeLuo/wai/releases/tag/v1.0.0) - 2022-06-25
+## [1.0.0](https://github.com/dukeluo/wai/releases/tag/v1.0.0) - 2022-06-25
 
 ### 新增
 - 活动脖子，预防颈椎病

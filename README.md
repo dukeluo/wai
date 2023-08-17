@@ -54,7 +54,7 @@
 
 - [chrome web store](https://chrome.google.com/webstore/detail/%E6%AD%AA%E8%84%96%E5%AD%90%E6%96%B0%E6%A0%87%E7%AD%BE%E9%A1%B5/ackimleclkemolnfcfajficenpbnaiba)
 - [Add-ons for Firefox](https://addons.mozilla.org/en-US/firefox/addon/%E6%AD%AA%E8%84%96%E5%AD%90%E6%96%B0%E6%A0%87%E7%AD%BE%E9%A1%B5/)
-- [离线安装包](https://github.com/DukeLuo/wai/releases)
+- [离线安装包](https://github.com/dukeluo/wai/releases)
 - [在线体验](https://wai.shaiwang.life/)
 
 ### 功能
@@ -90,6 +90,6 @@
 
 ### 其他
 
-- [「歪脖子新标签页」 Issue 列表](https://github.com/DukeLuo/wai/issues)
-- [「歪脖子新标签页」讨论吐槽区](https://github.com/DukeLuo/wai/discussions)
-- [「歪脖子新标签页」开发计划](https://github.com/users/DukeLuo/projects/2)
+- [「歪脖子新标签页」 Issue 列表](https://github.com/dukeluo/wai/issues)
+- [「歪脖子新标签页」讨论吐槽区](https://github.com/dukeluo/wai/discussions)
+- [「歪脖子新标签页」开发计划](https://github.com/users/dukeluo/projects/2)

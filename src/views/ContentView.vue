@@ -29,7 +29,7 @@ const { mode, config } = useMode()
       </section>
     </section>
     <section id="about">
-      <a href="https://github.com/DukeLuo/wai" target="_blank"><img src="/icons/about.svg" alt="About" /></a>
+      <a href="https://github.com/dukeluo/wai" target="_blank"><img src="/icons/about.svg" alt="About" /></a>
     </section>
     <section id="setting">
       <ModeSelector v-model="mode" />
