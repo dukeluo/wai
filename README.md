@@ -13,6 +13,13 @@
   >
     <img
       alt="Chrome Web Store Rating"
+      src="https://img.shields.io/chrome-web-store/users/ackimleclkemolnfcfajficenpbnaiba?label=Chrome%20Users"
+  /></a>
+  <a
+    href="https://chrome.google.com/webstore/detail/%E6%AD%AA%E8%84%96%E5%AD%90%E6%96%B0%E6%A0%87%E7%AD%BE%E9%A1%B5/ackimleclkemolnfcfajficenpbnaiba"
+  >
+    <img
+      alt="Chrome Web Store Rating"
       src="https://img.shields.io/chrome-web-store/rating/ackimleclkemolnfcfajficenpbnaiba?label=Chrome%20Rating"
   /></a>
   <a
@@ -21,6 +28,13 @@
     <img
       alt="Firefox Add-ons Version"
       src="https://img.shields.io/amo/v/%7B8ff02995-1ecd-4d77-9b1c-f4994f9ae70f%7D?label=Firefox%20Version"
+    /></a>
+  <a
+    href="https://addons.mozilla.org/en-US/firefox/addon/%E6%AD%AA%E8%84%96%E5%AD%90%E6%96%B0%E6%A0%87%E7%AD%BE%E9%A1%B5/"
+  >
+    <img
+      alt="Firefox Add-ons Version"
+      src="https://img.shields.io/amo/users/%7B8ff02995-1ecd-4d77-9b1c-f4994f9ae70f%7D?label=Firefox%20Users"
     /></a>
   <a
     href="https://addons.mozilla.org/en-US/firefox/addon/%E6%AD%AA%E8%84%96%E5%AD%90%E6%96%B0%E6%A0%87%E7%AD%BE%E9%A1%B5/"
