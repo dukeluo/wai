@@ -76,6 +76,13 @@ watch(config, (n) => (transform.value = `rotate(${n.turn}turn)`))
   text-orientation: sideways;
 }
 
+@media (max-width: 820px) {
+  #content {
+    min-width: 600px;
+    transform: none;
+  }
+}
+
 #about {
   position: absolute;
   top: 16px;
