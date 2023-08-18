@@ -83,13 +83,13 @@
 ### 支持作者
 
 <div style="display: flex; align-items: center">
-<img style="margin: 2px" width="200" height="200" src="./.github/assets/ByteLaughs.webp">
-<img style="margin: 2px" width="200" height="200" src="./.github/assets/donation.webp">
-<a href="https://ko-fi.com/huanluo"><img style="margin: 2px" width="200" src="./.github/assets/ko-fi.webp"></a>
+<img style="margin: 2px" width="240" height="240" src="./.github/assets/ByteLaughs.webp">
+<img style="margin: 2px" width="240" height="240" src="./.github/assets/donation.webp">
+<img style="margin: 2px" width="240" height="240" src="./.github/assets/ko-fi.webp">
 </div>
 
 ### 其他
 
-- [「歪脖子新标签页」 Issue 列表](https://github.com/dukeluo/wai/issues)
 - [「歪脖子新标签页」讨论吐槽区](https://github.com/dukeluo/wai/discussions)
 - [「歪脖子新标签页」开发计划](https://github.com/users/dukeluo/projects/2)
+- [「歪脖子新标签页」 Issue 列表](https://github.com/dukeluo/wai/issues)
