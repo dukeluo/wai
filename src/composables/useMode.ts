@@ -1,8 +1,8 @@
-import { ref, onBeforeUnmount, watch, reactive, computed, onBeforeMount } from 'vue'
+import { computed, onBeforeMount, onBeforeUnmount, reactive, ref, watch } from 'vue'
 import { MODE_CONFIG } from '../constants/mode'
+import { storage } from '../helpers/storage'
 import type { IModeConfig, IModeConfigValue } from '../types'
 import { Mode } from '../types'
-import { storage } from '../helpers/storage'
 
 const MODE_KEY = 'setting.mode'
 

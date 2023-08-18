@@ -1,23 +1,22 @@
 <script setup lang="ts">
-import { useMoment } from '../composables/useMoment'
+import { ref, watch } from 'vue'
 import DateTime from '../components/DateTime.vue'
-import TodayEvent from '../components/TodayEvent.vue'
-import SeasonFood from '../components/SeasonFood.vue'
 import ModeSelector from '../components/ModeSelector.vue'
+import SeasonFood from '../components/SeasonFood.vue'
+import TodayEvent from '../components/TodayEvent.vue'
 import { useMode } from '../composables/useMode'
+import { useMoment } from '../composables/useMoment'
 
 const { moment } = useMoment()
 const { mode, config } = useMode()
+const transform = ref(`rotate(${config.turn}turn)`)
+
+watch(config, (n) => (transform.value = `rotate(${n.turn}turn)`))
 </script>
 
 <template>
   <main id="container">
-    <section
-      id="content"
-      :style="{
-        transform: `rotate(${config.turn}turn)`,
-      }"
-    >
+    <section id="content">
       <section id="w1">
         <DateTime :date="moment" />
       </section>
@@ -58,6 +57,7 @@ const { mode, config } = useMode()
     'w2  w2  w2  w3'
     'w2  w2  w2  w3';
   overflow: hidden;
+  transform: v-bind('transform');
 }
 
 #w1 {
