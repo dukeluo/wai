@@ -1,10 +1,12 @@
 name: Release .crx
+
 on:
-  push:
-    tags:
-      - v**
+  release:
+    types: [created]
+
 permissions:
   contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -16,7 +18,7 @@ jobs:
         uses: martinbeentjes/npm-get-version-action@main
       - name: Build
         run: |
-          npm install
+          npm ci
           npm run build
       - name: Pack .zip
         uses: cardinalby/webext-buildtools-pack-extension-dir-action@v1
@@ -29,14 +31,10 @@ jobs:
           zipFilePath: 'wai-v${{ steps.package-version.outputs.current-version }}.zip'
           crxFilePath: 'wai-v${{ steps.package-version.outputs.current-version }}.crx'
           privateKey: ${{ secrets.CRX_PRIVATE_KEY }}
-      - name: Create Release
-        uses: softprops/action-gh-release@v1
-        with:
-          draft: true
-          generate_release_notes: false
-          files: |
-            wai-v${{ steps.package-version.outputs.current-version }}.zip
-            wai-v${{ steps.package-version.outputs.current-version }}.crx
+  upload-chrome-store:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
       - name: Upload to Chrome Web Store
         uses: mnao305/chrome-extension-upload@v4.0.1
         with:
@@ -46,6 +44,10 @@ jobs:
           client-secret: ${{ secrets.CHROME_CLIENT_SECRET }}
           refresh-token: ${{ secrets.CHROME_REFRESH_TOKEN }}
           publish: false
+  upload-firefox-addons:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
       - name: Upload to Add-ons for Firefox
         uses: maoserr/firefox_extension_publish@v1.0.4
         with:
@@ -54,3 +56,15 @@ jobs:
           api_secret: ${{ secrets.FIREFOX_JWT_SECRET }}
           file: 'wai-v${{ steps.package-version.outputs.current-version }}.zip'
           src_file: 'wai-v${{ steps.package-version.outputs.current-version }}.zip'
+  upload-github-release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          draft: true
+          generate_release_notes: false
+          files: |
+            wai-v${{ steps.package-version.outputs.current-version }}.zip
+            wai-v${{ steps.package-version.outputs.current-version }}.crx
