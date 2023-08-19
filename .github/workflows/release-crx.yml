@@ -3,12 +3,13 @@ name: Release .crx
 on:
   release:
     types: [created]
+  workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  build:
+  release:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -31,10 +32,14 @@ jobs:
           zipFilePath: 'wai-v${{ steps.package-version.outputs.current-version }}.zip'
           crxFilePath: 'wai-v${{ steps.package-version.outputs.current-version }}.crx'
           privateKey: ${{ secrets.CRX_PRIVATE_KEY }}
-  upload-chrome-store:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
+      - name: Update GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: 'v${{ steps.package-version.outputs.current-version }}'
+          generate_release_notes: false
+          files: |
+            wai-v${{ steps.package-version.outputs.current-version }}.zip
+            wai-v${{ steps.package-version.outputs.current-version }}.crx
       - name: Upload to Chrome Web Store
         uses: mnao305/chrome-extension-upload@v4.0.1
         with:
@@ -44,10 +49,6 @@ jobs:
           client-secret: ${{ secrets.CHROME_CLIENT_SECRET }}
           refresh-token: ${{ secrets.CHROME_REFRESH_TOKEN }}
           publish: false
-  upload-firefox-addons:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
       - name: Upload to Add-ons for Firefox
         uses: maoserr/firefox_extension_publish@v1.0.4
         with:
@@ -56,15 +57,3 @@ jobs:
           api_secret: ${{ secrets.FIREFOX_JWT_SECRET }}
           file: 'wai-v${{ steps.package-version.outputs.current-version }}.zip'
           src_file: 'wai-v${{ steps.package-version.outputs.current-version }}.zip'
-  upload-github-release:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Update GitHub Release
-        uses: softprops/action-gh-release@v1
-        with:
-          draft: true
-          generate_release_notes: false
-          files: |
-            wai-v${{ steps.package-version.outputs.current-version }}.zip
-            wai-v${{ steps.package-version.outputs.current-version }}.crx
