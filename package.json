@@ -1,7 +1,7 @@
 {
   "name": "wai",
   "description": "A new tab web extension that can prevent cervical spondylosis",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dukeluo/wai.git"
