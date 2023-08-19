@@ -1,4 +1,4 @@
-name: Release .crx
+name: Pack .crx
 
 on:
   release:
@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 jobs:
-  release:
+  pack:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -40,20 +40,3 @@ jobs:
           files: |
             wai-v${{ steps.package-version.outputs.current-version }}.zip
             wai-v${{ steps.package-version.outputs.current-version }}.crx
-      - name: Upload to Chrome Web Store
-        uses: mnao305/chrome-extension-upload@v4.0.1
-        with:
-          extension-id: ackimleclkemolnfcfajficenpbnaiba
-          file-path: 'wai-v${{ steps.package-version.outputs.current-version }}.zip'
-          client-id: ${{ secrets.CHROME_CLIENT_ID }}
-          client-secret: ${{ secrets.CHROME_CLIENT_SECRET }}
-          refresh-token: ${{ secrets.CHROME_REFRESH_TOKEN }}
-          publish: false
-      - name: Upload to Add-ons for Firefox
-        uses: maoserr/firefox_extension_publish@v1.0.4
-        with:
-          firefox_extension_id: '{8ff02995-1ecd-4d77-9b1c-f4994f9ae70f}'
-          api_key: ${{ secrets.FIREFOX_JWT_ISSUER }}
-          api_secret: ${{ secrets.FIREFOX_JWT_SECRET }}
-          file: 'wai-v${{ steps.package-version.outputs.current-version }}.zip'
-          src_file: 'wai-v${{ steps.package-version.outputs.current-version }}.zip'
