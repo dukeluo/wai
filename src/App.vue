@@ -49,9 +49,6 @@ ol {
 /* --------------------------------------------------------*/
 body {
   margin: 0;
-}
-
-html {
   font-family: 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
   font-size: 100%;
   -webkit-font-smoothing: antialiased;
