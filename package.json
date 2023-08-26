@@ -31,7 +31,7 @@
     "build": "vue-tsc --noEmit && vite build",
     "watch": "vite build --watch",
     "preview": "vite preview",
-    "lint": "eslint --ext .ts,.vue,.json src && stylelint **/*.vue"
+    "lint": "eslint --ext .ts,.vue,.json src && stylelint \"**/*.vue\""
   },
   "dependencies": {
     "vue": "3.2.37"
@@ -50,13 +50,12 @@
     "eslint-plugin-prettier": "4.2.1",
     "eslint-plugin-vue": "9.1.1",
     "husky": "8.0.1",
-    "postcss-html": "1.4.1",
+    "postcss-html": "^1.5.0",
     "prettier": "2.7.1",
     "sass": "1.53.0",
-    "stylelint": "15.10.1",
-    "stylelint-config-prettier": "9.0.3",
-    "stylelint-config-recommended-scss": "11.0.0",
-    "stylelint-config-recommended-vue": "1.4.0",
+    "stylelint": "^15.10.3",
+    "stylelint-config-recommended-scss": "^12.0.0",
+    "stylelint-config-recommended-vue": "^1.5.0",
     "typescript": "4.7.4",
     "vite": "2.9.16",
     "vite-plugin-banner": "^0.7.0",
