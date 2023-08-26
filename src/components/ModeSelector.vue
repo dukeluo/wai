@@ -55,44 +55,52 @@ $transition-duration: 0.8s;
 
 #mode-selector {
   position: relative;
+  background: $color-2;
   border: 1px solid $color-1;
   border-radius: 2px;
-  background: $color-2;
 
   ul {
-    padding: 0;
-    margin: 0;
     display: flex;
     justify-content: space-between;
+    margin: 0;
+    padding: 0;
 
     li {
+      cursor: pointer;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
       width: $element-width;
       height: $element-height;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      list-style: none;
-      cursor: pointer;
+
       color: $color-1;
+      list-style: none;
+
       transition: color $transition-duration * 2;
     }
 
     .selected {
-      background-color: transparent;
-      color: $color-2;
       z-index: 1;
+      color: $color-2;
+      background-color: transparent;
     }
   }
 
   .slider {
+    pointer-events: none;
+
     position: absolute;
     top: 0;
     left: 0;
-    pointer-events: none;
+
     width: $element-width;
     height: $element-height;
-    transition: transform $transition-duration;
+
     background-color: $color-1;
+
+    transition: transform $transition-duration;
   }
 }
 </style>

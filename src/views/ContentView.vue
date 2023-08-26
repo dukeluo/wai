@@ -38,26 +38,29 @@ watch(config, (n) => (transform.value = `rotate(${n.turn}turn)`))
 
 <style lang="scss" scoped>
 #container {
-  width: inherit;
-  height: inherit;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  width: inherit;
+  height: inherit;
 }
 
 #content {
-  margin: auto;
-  width: 60vh;
-  height: 60vh;
+  transform: v-bind('transform');
+
+  overflow: hidden;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas:
     'w1  w1  w1  w3'
     'w2  w2  w2  w3'
     'w2  w2  w2  w3';
-  overflow: hidden;
-  transform: v-bind('transform');
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+
+  width: 60vh;
+  height: 60vh;
+  margin: auto;
 }
 
 #w1 {
@@ -69,18 +72,20 @@ watch(config, (n) => (transform.value = `rotate(${n.turn}turn)`))
 }
 
 #w3 {
+  transform: rotate(-180deg);
+
   grid-area: w3;
   justify-self: center;
-  transform: rotate(-180deg);
+
   writing-mode: vertical-rl;
   text-orientation: sideways;
 }
 
 @media (max-width: 820px), (max-height: 820px) {
   #content {
+    transform: none;
     min-width: 600px;
     min-height: 600px;
-    transform: none;
   }
 }
 
@@ -97,7 +102,7 @@ watch(config, (n) => (transform.value = `rotate(${n.turn}turn)`))
 
 #setting {
   position: absolute;
-  bottom: 32px;
   right: 16px;
+  bottom: 32px;
 }
 </style>

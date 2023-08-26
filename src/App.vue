@@ -11,14 +11,14 @@ h1,
 h2,
 h3 {
   margin: 0;
-  text-transform: uppercase;
   line-height: 1.2;
+  text-transform: uppercase;
 }
 
 h4 {
+  margin: 0.1rem 0 0.2rem;
   font-size: 1rem;
   font-weight: 400;
-  margin: 0.1rem 0 0.2rem;
   line-height: 1.2;
 }
 
@@ -32,9 +32,9 @@ a:hover {
 }
 
 ul {
-  list-style: none;
-  padding: 0;
   margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
 }
 
 ul > li {
@@ -42,18 +42,20 @@ ul > li {
 }
 
 ol {
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 /* --------------------------------------------------------*/
 body {
   margin: 0;
+
   font-family: 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
   font-size: 100%;
+  font-weight: 400;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-weight: 400;
 }
 
 html,

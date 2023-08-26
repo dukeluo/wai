@@ -39,17 +39,19 @@ defineExpose<IContentCardApis>({ containerRef, titleRef, contentRef })
   height: 100%;
 
   p {
-    font-size: 18px;
     margin: 0 0 4px 0;
+    font-size: 18px;
     line-height: 1.4;
   }
 
   .title {
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+
     font-size: 24px;
     line-height: 1.2;
     color: #e81c27;
-    margin-bottom: 8px;
-    padding-bottom: 8px;
+
     border-bottom: 8px solid black;
   }
 
@@ -75,10 +77,11 @@ defineExpose<IContentCardApis>({ containerRef, titleRef, contentRef })
 
     .title {
       margin: 0;
-      padding: 0;
-      border: none;
       margin-left: 8px;
+      padding: 0;
       padding-left: 8px;
+
+      border: none;
       border-left: 8px solid black;
     }
   }
