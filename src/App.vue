@@ -64,4 +64,34 @@ body,
   height: 100%;
   background-color: #f7f4e3;
 }
+
+@media screen and (max-height: 639px) {
+  :root {
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-height: 640px) and (max-height: 739px) {
+  :root {
+    font-size: 13px;
+  }
+}
+
+@media screen and (min-height: 740px) and (max-height: 839px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-height: 840px) and (max-height: 939px) {
+  :root {
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-height: 940px) {
+  :root {
+    font-size: 16px;
+  }
+}
 </style>
