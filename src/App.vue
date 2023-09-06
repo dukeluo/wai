@@ -51,7 +51,6 @@ body {
   margin: 0;
 
   font-family: 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
-  font-size: 100%;
   font-weight: 400;
 
   -webkit-font-smoothing: antialiased;

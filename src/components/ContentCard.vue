@@ -40,7 +40,7 @@ defineExpose<IContentCardApis>({ containerRef, titleRef, contentRef })
 
   p {
     margin: 0 0 4px 0;
-    font-size: 18px;
+    font-size: 1.2rem;
     line-height: 1.4;
   }
 
@@ -48,7 +48,7 @@ defineExpose<IContentCardApis>({ containerRef, titleRef, contentRef })
     margin-bottom: 8px;
     padding-bottom: 8px;
 
-    font-size: 24px;
+    font-size: 1.5rem;
     line-height: 1.2;
     color: #e81c27;
 
