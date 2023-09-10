@@ -1,5 +1,11 @@
 # 更新日志
 
+## [1.4.1](https://github.com/dukeluo/wai/compare/v1.4.0...v1.4.1) - 2023-09-10
+
+### 修复
+
+- 修复在狭窄屏幕下内容不歪的问题
+
 ## [1.4.0](https://github.com/dukeluo/wai/compare/v1.3.0...v1.4.0) - 2023-08-19
 
 ### 新增
