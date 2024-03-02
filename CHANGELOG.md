@@ -1,5 +1,11 @@
 # 更新日志
 
+## [1.4.2](https://github.com/dukeluo/wai/compare/v1.4.1...v1.4.2) - 2024-03-02
+
+### 修复
+
+- 修复在 2.29 号因缺少内置「历史上的今天」数据而崩溃的问题
+
 ## [1.4.1](https://github.com/dukeluo/wai/compare/v1.4.0...v1.4.1) - 2023-09-10
 
 ### 修复
