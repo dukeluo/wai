@@ -43,6 +43,13 @@
       alt="Firefox Add-ons Rating"
       src="https://img.shields.io/amo/rating/%7B8ff02995-1ecd-4d77-9b1c-f4994f9ae70f%7D?label=Firefox%20Rating"
     /></a>
+  <a
+    href="https://x.com/ihuanluo"
+  >
+    <img
+      alt="Follow Author on X"
+      src="https://img.shields.io/badge/follow-@ihuanluo-black"
+    /></a>
   <img alt="GitHub" src="https://img.shields.io/github/license/dukeluo/wai" />
 </p>
 
