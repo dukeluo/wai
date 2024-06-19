@@ -52,6 +52,9 @@
     /></a>
   <img alt="GitHub" src="https://img.shields.io/github/license/dukeluo/wai" />
 </p>
+<p align="center">
+  <a href="https://hellogithub.com/repository/0b99a938e238439dbf6bc0660c5bcdb0" target="_blank"><img src="https://api.hellogithub.com/v1/widgets/recommend.svg?rid=0b99a938e238439dbf6bc0660c5bcdb0&claim_uid=k0lRLW32HugDj8t" alt="Featured｜HelloGitHub" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+</p>
 
 ## 歪脖子新标签页
 
