@@ -16,10 +16,16 @@
     "cervical spondylosis"
   ],
   "author": "Huan Luo <dukeluo@outlook.com> (https://shaiwang.life)",
-  "funding": {
-    "type": "ko_fi",
-    "url": "https://ko-fi.com/huanluo"
-  },
+  "funding": [
+    {
+      "type": "ko_fi",
+      "url": "https://ko-fi.com/huanluo"
+    },
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/dukeluo"
+    }
+  ],
   "license": "MPL-2.0",
   "bugs": {
     "url": "https://github.com/dukeluo/wai/issues"
@@ -34,9 +40,6 @@
     "lint": "eslint --ext .ts,.vue,.json src && stylelint \"**/*.vue\"",
     "lint:fix": "eslint --fix --ext .ts,.vue,.json src && stylelint --fix \"**/*.vue\""
   },
-  "dependencies": {
-    "vue": "3.3.4"
-  },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
@@ -45,9 +48,9 @@
     "@typescript-eslint/eslint-plugin": "5.30.7",
     "@vitejs/plugin-vue": "4.3.3",
     "@vue/eslint-config-typescript": "11.0.0",
-    "eslint": "8.19.0",
+    "eslint": "8.57.1",
     "eslint-config-prettier": "8.5.0",
-    "eslint-plugin-check-file": "2.6.1",
+    "eslint-plugin-check-file": "2.8.0",
     "eslint-plugin-prettier": "4.2.1",
     "eslint-plugin-vue": "9.1.1",
     "husky": "8.0.1",
@@ -59,10 +62,11 @@
     "stylelint-config-clean-order": "^5.2.0",
     "stylelint-config-recommended-scss": "^12.0.0",
     "stylelint-config-recommended-vue": "^1.5.0",
-    "typescript": "4.7.4",
+    "typescript": "5.7.3",
     "vite": "4.5.9",
     "vite-plugin-banner": "^0.7.0",
-    "vue-tsc": "0.38.9"
+    "vue": "3.5.13",
+    "vue-tsc": "2.2.0"
   },
   "engines": {
     "node": ">=20"
