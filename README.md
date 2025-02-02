@@ -51,6 +51,14 @@
       src="https://img.shields.io/badge/follow-@ihuanluo-black"
     /></a>
   <img alt="GitHub" src="https://img.shields.io/github/license/dukeluo/wai" />
+    <a
+    href="https://api.gitsponsors.com/api/badge/link?p=nKt6gGslcoYHcrdAcrvb+727WOtc1RqA9RkxWtyk6mpkNLczJYZqD3xSCUBegFDzi8ek16Eh2Wvd/rvKEd/+MRtSH3hq+MeCN+7KPp4BASd6rm06PTms6rKHRh5aZAlqof4YVWhWOkkhEDcV+QrWmQ=="
+  >
+    <img
+      alt="GitSponsors"
+      src="https://api.gitsponsors.com/api/badge/img?id=489377807"
+      height="20"
+    /></a>
 </p>
 <p align="center">
   <a href="https://hellogithub.com/repository/0b99a938e238439dbf6bc0660c5bcdb0" target="_blank"><img src="https://api.hellogithub.com/v1/widgets/recommend.svg?rid=0b99a938e238439dbf6bc0660c5bcdb0&claim_uid=k0lRLW32HugDj8t" alt="Featured｜HelloGitHub" style="width: 250px; height: 54px;" width="250" height="54" /></a>
