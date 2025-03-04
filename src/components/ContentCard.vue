@@ -49,12 +49,11 @@ defineExpose<IContentCardApis>({ containerRef, titleRef, contentRef })
   .title {
     margin-bottom: 8px;
     padding-bottom: 8px;
+    border-bottom: 8px solid black;
 
     font-size: 1.5rem;
     line-height: 1.2;
     color: $color-danger;
-
-    border-bottom: 8px solid black;
   }
 
   .items span {
@@ -82,7 +81,6 @@ defineExpose<IContentCardApis>({ containerRef, titleRef, contentRef })
       margin-left: 8px;
       padding: 0;
       padding-left: 8px;
-
       border: none;
       border-left: 8px solid black;
     }

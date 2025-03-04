@@ -27,9 +27,6 @@ watch(config, (n) => (transform.value = `rotate(${n.turn}turn)`))
         <SeasonFood :date="moment" :is-reversed="config.isReversed" />
       </section>
     </section>
-    <section id="about">
-      <a href="https://github.com/dukeluo/wai" target="_blank"><img src="/icons/about.svg" alt="About" /></a>
-    </section>
     <section id="setting">
       <SettingsMenu v-model="mode" />
     </section>
@@ -89,20 +86,9 @@ watch(config, (n) => (transform.value = `rotate(${n.turn}turn)`))
   }
 }
 
-#about {
+#setting {
   position: absolute;
   top: 16px;
   right: 16px;
-
-  img {
-    width: 24px;
-    height: 24px;
-  }
-}
-
-#setting {
-  position: absolute;
-  right: 16px;
-  bottom: 32px;
 }
 </style>

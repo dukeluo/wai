@@ -57,10 +57,10 @@ $transition-duration: 0.8s;
   position: relative;
 
   width: $element-width * 3;
+  border: 1px solid #{$color-accent};
+  border-radius: 2px;
 
   background: $color-text-light;
-  border: 1px solid $color-accent;
-  border-radius: 2px;
 
   ul {
     display: flex;
@@ -81,7 +81,7 @@ $transition-duration: 0.8s;
       color: $color-accent;
       list-style: none;
 
-      transition: color $transition-duration * 2;
+      transition: color #{$transition-duration * 2};
     }
 
     .selected {
@@ -103,7 +103,7 @@ $transition-duration: 0.8s;
 
     background-color: $color-accent;
 
-    transition: transform $transition-duration;
+    transition: transform #{$transition-duration};
   }
 }
 </style>
