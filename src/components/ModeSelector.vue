@@ -47,16 +47,16 @@ const onSelect = (option: IOption, index: number) => {
 </template>
 
 <style lang="scss" scoped>
-$color-1: #8f8148;
-$color-2: #fefdf5;
+@import '../variables';
+
 $element-width: 120px;
 $element-height: 36px;
 $transition-duration: 0.8s;
 
 #mode-selector {
   position: relative;
-  background: $color-2;
-  border: 1px solid $color-1;
+  background: $color-text-light;
+  border: 1px solid $color-accent;
   border-radius: 2px;
 
   ul {
@@ -75,7 +75,7 @@ $transition-duration: 0.8s;
       width: $element-width;
       height: $element-height;
 
-      color: $color-1;
+      color: $color-accent;
       list-style: none;
 
       transition: color $transition-duration * 2;
@@ -83,7 +83,7 @@ $transition-duration: 0.8s;
 
     .selected {
       z-index: 1;
-      color: $color-2;
+      color: $color-text-light;
       background-color: transparent;
     }
   }
@@ -98,7 +98,7 @@ $transition-duration: 0.8s;
     width: $element-width;
     height: $element-height;
 
-    background-color: $color-1;
+    background-color: $color-accent;
 
     transition: transform $transition-duration;
   }

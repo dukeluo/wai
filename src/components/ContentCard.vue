@@ -34,6 +34,8 @@ defineExpose<IContentCardApis>({ containerRef, titleRef, contentRef })
 </template>
 
 <style lang="scss" scoped>
+@import '../variables';
+
 .card {
   width: 100%;
   height: 100%;
@@ -50,7 +52,7 @@ defineExpose<IContentCardApis>({ containerRef, titleRef, contentRef })
 
     font-size: 1.5rem;
     line-height: 1.2;
-    color: #e81c27;
+    color: $color-danger;
 
     border-bottom: 8px solid black;
   }

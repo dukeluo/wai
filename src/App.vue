@@ -6,7 +6,9 @@ import ContentView from './views/ContentView.vue'
   <ContentView />
 </template>
 
-<style>
+<style lang="scss">
+@import './variables';
+
 h1,
 h2,
 h3 {
@@ -23,12 +25,12 @@ h4 {
 }
 
 a {
-  color: rgba(12, 12, 10, 0.8);
+  color: $color-text-dark;
   text-decoration: none;
 }
 
 a:hover {
-  color: #e81c27;
+  color: $color-danger;
 }
 
 ul {
@@ -62,7 +64,7 @@ body,
 #app {
   width: 100%;
   height: 100%;
-  background-color: #f7f4e3;
+  background-color: $color-primary;
 }
 
 @media screen and (max-height: 439px) {

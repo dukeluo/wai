@@ -33,6 +33,8 @@ const toggleMenu = () => {
 </template>
 
 <style lang="scss" scoped>
+@import '../variables';
+
 .settings-container {
   position: relative;
 }
@@ -58,10 +60,9 @@ const toggleMenu = () => {
   margin-bottom: 8px;
   padding: 16px;
 
-  background: #fefdf5;
-  border: 1px solid #8f8148;
+  background: $color-text-light;
+  border: 1px solid $color-accent;
   border-radius: 4px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .settings-header {
@@ -72,7 +73,7 @@ const toggleMenu = () => {
 
   h3 {
     margin: 0;
-    color: #8f8148;
+    color: $color-accent;
   }
 
   .close-button {
@@ -81,7 +82,7 @@ const toggleMenu = () => {
     padding: 4px 8px;
 
     font-size: 24px;
-    color: #8f8148;
+    color: $color-accent;
 
     background: none;
     border: none;
@@ -97,7 +98,7 @@ const toggleMenu = () => {
     label {
       display: block;
       margin-bottom: 8px;
-      color: #8f8148;
+      color: $color-accent;
     }
   }
 }
