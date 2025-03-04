@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 import DateTime from '../components/DateTime.vue'
-import ModeSelector from '../components/ModeSelector.vue'
+import SettingsMenu from '../components/SettingsMenu.vue'
 import SeasonFood from '../components/SeasonFood.vue'
 import TodayEvent from '../components/TodayEvent.vue'
 import { useMode } from '../composables/useMode'
@@ -31,7 +31,7 @@ watch(config, (n) => (transform.value = `rotate(${n.turn}turn)`))
       <a href="https://github.com/dukeluo/wai" target="_blank"><img src="/icons/about.svg" alt="About" /></a>
     </section>
     <section id="setting">
-      <ModeSelector v-model="mode" />
+      <SettingsMenu v-model="mode" />
     </section>
   </main>
 </template>
