@@ -55,6 +55,9 @@ $transition-duration: 0.8s;
 
 #mode-selector {
   position: relative;
+
+  width: $element-width * 3;
+
   background: $color-text-light;
   border: 1px solid $color-accent;
   border-radius: 2px;

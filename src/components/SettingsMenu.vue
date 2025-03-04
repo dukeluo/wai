@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, defineModel } from 'vue'
+import { ref } from 'vue'
 import ModeSelector from './ModeSelector.vue'
 import { Mode } from '../types'
 
@@ -17,18 +17,22 @@ const toggleMenu = () => {
       <img src="/icons/settings.svg" alt="Settings" />
     </button>
 
-    <div v-if="isOpen" class="settings-menu">
-      <div class="settings-header">
-        <h3>设置</h3>
-        <button class="close-button" @click="toggleMenu">×</button>
-      </div>
-      <div class="settings-content">
-        <div class="setting-item">
-          <label>模式</label>
-          <ModeSelector v-model="modelValue" />
+    <Transition name="slide">
+      <div v-if="isOpen" class="settings-overlay" @click="toggleMenu">
+        <div class="settings-menu" @click.stop>
+          <div class="settings-header">
+            <h3>设置</h3>
+            <img class="close-button" src="/icons/close.svg" alt="Close" @click="toggleMenu" />
+          </div>
+          <div class="settings-content">
+            <div class="setting-item">
+              <label>模式</label>
+              <ModeSelector v-model="modelValue" />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </Transition>
   </div>
 </template>
 
@@ -51,25 +55,34 @@ const toggleMenu = () => {
   }
 }
 
-.settings-menu {
-  position: absolute;
+.settings-overlay {
+  position: fixed;
+  z-index: 100;
+  top: 0;
   right: 0;
-  bottom: 100%;
+  bottom: 0;
+  left: 0;
+}
 
-  min-width: 300px;
-  margin-bottom: 8px;
-  padding: 16px;
+.settings-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  overflow-y: auto;
+
+  width: 400px;
+  padding: 24px;
 
   background: $color-text-light;
-  border: 1px solid $color-accent;
-  border-radius: 4px;
 }
 
 .settings-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 
   h3 {
     margin: 0;
@@ -78,17 +91,11 @@ const toggleMenu = () => {
 
   .close-button {
     cursor: pointer;
-
-    padding: 4px 8px;
-
-    font-size: 24px;
-    color: $color-accent;
-
-    background: none;
-    border: none;
+    width: 32px;
+    height: 32px;
 
     &:hover {
-      opacity: 0.8;
+      opacity: 0.7;
     }
   }
 }
@@ -101,5 +108,21 @@ const toggleMenu = () => {
       color: $color-accent;
     }
   }
+}
+
+// Slide animation
+.slide-enter-active,
+.slide-leave-active {
+  transition: transform 0.4s ease;
+}
+
+.slide-enter-from,
+.slide-leave-to {
+  transform: translateX(100%);
+}
+
+.slide-enter-to,
+.slide-leave-from {
+  transform: translateX(0);
 }
 </style>
