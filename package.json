@@ -39,11 +39,13 @@
     "watch": "vite build --watch",
     "preview": "vite preview",
     "lint": "eslint --ext .ts,.vue,.json src && stylelint \"**/*.vue\"",
-    "lint:fix": "eslint --fix --ext .ts,.vue,.json src && stylelint --fix \"**/*.vue\""
+    "lint:fix": "eslint --fix --ext .ts,.vue,.json src && stylelint --fix \"**/*.vue\"",
+    "supabase:functions:deploy": "supabase functions deploy --project-ref lrymgxtzbdzqgoesfnan"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
+    "@supabase/supabase-js": "^2.49.1",
     "@types/chrome": "0.0.197",
     "@types/node": "20.14.8",
     "@typescript-eslint/eslint-plugin": "5.30.7",
@@ -63,6 +65,7 @@
     "stylelint-config-clean-order": "^7.0.0",
     "stylelint-config-recommended-scss": "^14.1.0",
     "stylelint-config-recommended-vue": "^1.6.0",
+    "supabase": "^2.15.8",
     "typescript": "5.7.3",
     "vite": "^6.2.0",
     "vite-plugin-banner": "^0.8.0",

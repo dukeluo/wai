@@ -42,12 +42,12 @@
       }
     ],
     "prettier/prettier": "error",
-    "check-file/no-index": [
-      "error",
-      {
-        "ignoreMiddleExtensions": true
-      }
-    ],
+    // "check-file/no-index": [
+    //   "error",
+    //   {
+    //     "ignoreMiddleExtensions": true
+    //   }
+    // ],
     "check-file/folder-naming-convention": [
       "error",
       {

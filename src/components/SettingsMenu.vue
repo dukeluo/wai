@@ -2,9 +2,11 @@
 import { ref } from 'vue'
 import ModeSelector from './ModeSelector.vue'
 import { Mode } from '../types'
+import { useLatestUpdate } from '../composables/useLatestUpdateApi'
 
 const isOpen = ref(false)
 const modelValue = defineModel<Mode>({ required: true })
+const { latestUpdate } = useLatestUpdate()
 
 const toggleMenu = () => {
   isOpen.value = !isOpen.value
@@ -27,6 +29,14 @@ const toggleMenu = () => {
               <label>模式</label>
               <ModeSelector v-model="modelValue" />
             </div>
+            <template v-if="latestUpdate?.message">
+              <div class="setting-item">
+                <label>最新动态</label>
+                <div class="about-content">
+                  <p class="about-description">{{ latestUpdate.message }}</p>
+                </div>
+              </div>
+            </template>
             <div class="setting-item">
               <label>关于</label>
               <div class="about-content">
