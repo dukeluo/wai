@@ -13,16 +13,14 @@ const toggleMenu = () => {
 
 <template>
   <div class="settings-container">
-    <button class="settings-button" @click="toggleMenu">
-      <img src="/icons/settings.svg" alt="Settings" />
-    </button>
+    <img src="/icons/settings.svg" alt="Settings" class="icon-button" @click="toggleMenu" />
 
     <Transition name="slide">
       <div v-if="isOpen" class="settings-overlay" @click="toggleMenu">
         <div class="settings-menu" @click.stop>
           <div class="settings-header">
             <h3>设置</h3>
-            <img class="close-button" src="/icons/close.svg" alt="Close" @click="toggleMenu" />
+            <img class="icon-button" src="/icons/close.svg" alt="Close" @click="toggleMenu" />
           </div>
           <div class="settings-content">
             <div class="setting-item">
@@ -58,7 +56,7 @@ const toggleMenu = () => {
                     <img src="/images/wechat.webp" alt="Donation QR Code" />
                   </div>
                 </div>
-                <div class="sponsor-links">
+                <div class="support-options">
                   <a href="https://github.com/sponsors/dukeluo" target="_blank" class="link-item">
                     <img src="/icons/github.svg" alt="GitHub Sponsors" />
                     <span>GitHub Sponsors</span>
@@ -87,15 +85,13 @@ const toggleMenu = () => {
   position: relative;
 }
 
-.settings-button {
+.icon-button {
   cursor: pointer;
-  padding: 8px;
-  border: none;
-  background: none;
+  width: 28px;
+  height: 28px;
 
-  img {
-    width: 24px;
-    height: 24px;
+  &:hover {
+    opacity: 0.7;
   }
 }
 
@@ -131,16 +127,6 @@ const toggleMenu = () => {
   h3 {
     margin: 0;
     color: $color-accent;
-  }
-
-  .close-button {
-    cursor: pointer;
-    width: 32px;
-    height: 32px;
-
-    &:hover {
-      opacity: 0.7;
-    }
   }
 }
 
@@ -194,7 +180,7 @@ const toggleMenu = () => {
   }
 }
 
-.sponsor-links {
+.support-options {
   display: flex;
   gap: 16px;
   justify-content: center;
@@ -207,11 +193,6 @@ const toggleMenu = () => {
 }
 
 .qr-item {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  align-items: center;
-
   img {
     width: 180px;
     height: 180px;
@@ -227,11 +208,6 @@ const toggleMenu = () => {
       transform: translateY(-2px);
       box-shadow: 0 4px 16px color.adjust($color-shadow, $alpha: 0.1);
     }
-  }
-
-  span {
-    font-size: 0.9em;
-    color: $color-text-dark;
   }
 }
 
