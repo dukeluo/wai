@@ -1,9 +1,6 @@
-import { ref, onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 import { LatestUpdateService } from '../services/LatestUpdateService'
-
-export interface ILatestUpdate {
-  message: string
-}
+import { ILatestUpdate } from '../types'
 
 export function useLatestUpdate() {
   const service = new LatestUpdateService()
@@ -18,6 +15,7 @@ export function useLatestUpdate() {
 
       const data = await service.fetch()
       latestUpdate.value = data
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
       error.value = 'Failed to load latest update'
     } finally {

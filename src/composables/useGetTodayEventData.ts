@@ -28,7 +28,6 @@ export const useGetTodayEventData = (date: Date, cardRef: Ref<InstanceType<typeo
     let currentHeight = content.offsetHeight
     let index = start
 
-    // eslint-disable-next-line no-constant-condition
     while (true) {
       const event = todayHistoryEvents[index]
       const { height } = measureParagraph(content, event)

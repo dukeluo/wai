@@ -12,7 +12,6 @@ const getRandomFoods = (container: HTMLElement, foods: string[]) => {
   const items: string[] = []
   let index = start
 
-  // eslint-disable-next-line no-constant-condition
   while (true) {
     const food = foods[index]
 

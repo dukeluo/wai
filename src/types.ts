@@ -33,20 +33,17 @@ export type Day =
   | '30'
   | '31'
 
-type MonthInHistory = {
-  [day in Day]?: string[]
-}
+type MonthInHistory = Partial<Record<Day, string[]>>
 
-export type YearInHistory = {
-  [month in Month]: MonthInHistory
-}
+export type YearInHistory = Record<Month, MonthInHistory>
 
-export type SeasonFood = {
-  [month in Month]: {
+export type SeasonFood = Record<
+  Month,
+  {
     vegetables: string[]
     fruits: string[]
   }
-}
+>
 
 export interface IContentBaseProps {
   date: Date
@@ -68,4 +65,8 @@ export interface IModeConfigValue {
   turn: number
   isReversed: boolean
   interval: number
+}
+
+export interface ILatestUpdate {
+  message: string
 }

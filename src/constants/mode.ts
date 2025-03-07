@@ -3,7 +3,7 @@ import type { IModeConfig } from '../types'
 import { randomNumber } from '../helpers/random'
 import { counter } from '../helpers/counter'
 
-export const MODE_CONFIG: { [m in Mode]: IModeConfig } = {
+export const MODE_CONFIG: Record<Mode, IModeConfig> = {
   [Mode.Full]: {
     turn: () => randomNumber(0, 1),
     isReversed: true,
