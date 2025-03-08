@@ -33,7 +33,8 @@ const toggleMenu = () => {
               <div class="setting-item">
                 <label>最新动态</label>
                 <div class="about-content">
-                  <p class="about-description">{{ latestUpdate.message }}</p>
+                  <!-- eslint-disable-next-line vue/no-v-html -->
+                  <p class="about-description" v-html="latestUpdate.message" />
                 </div>
               </div>
             </template>

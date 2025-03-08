@@ -26,7 +26,6 @@ h4 {
 
 a {
   color: $color-text-dark;
-  text-decoration: none;
 }
 
 a:hover {
