@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "歪脖子新标签页",
   "description": "一款可以预防颈椎病的新标签页扩展",
-  "version": "1.4.2",
+  "version": "1.5.0",
   "author": "Huan Luo <dukeluo@outlook.com> (https://shaiwang.life)",
   "homepage_url": "https://github.com/dukeluo/wai",
   "chrome_url_overrides": {
