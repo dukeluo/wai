@@ -48,14 +48,24 @@ def parseLiItem(liItem):
 
 
 def getDayEvents(html):
-    match = re.compile(
-        "(<span class=\"mw-headline\" id=\"大事[记記纪紀]\">[\s\S]*?)<h2>").search(html)
+    # Find the main 大事记 section
+    main_section_pattern = re.compile(
+        r'<div class="mw-heading mw-heading2"><h2 id=\"大事[记記纪紀]\">.*?</h2>.*?</div>([\s\S]*?)<div class="mw-heading mw-heading2">')
+    main_match = main_section_pattern.search(html)
+
     list = []
 
-    if match:
-        bsObj = BeautifulSoup(match.group(1), "html.parser").findAll("li")
+    if main_match:
+        # Get all content between 大事记 and the next main heading
+        content = main_match.group(1)
+
+        # Process all <li> elements within this section (across all subsections)
+        bsObj = BeautifulSoup(content, "html.parser").findAll("li")
         for li in bsObj:
             list.extend(parseLiItem(li))
+    else:
+        print("未找到大事记部分")
+
     print("共有 %s 条" % list.__len__())
 
     return list
@@ -67,7 +77,8 @@ def main():
 
     for date in dateList:
         print("正在获取 %s 的数据..." % date)
-        r = requests.get("https://zh.wikipedia.org/zh-cn/%s" % date)
+        r = requests.get("https://zh.wikipedia.org/wiki/%s" %
+                         date, headers={'Accept-Language': 'en-US,zh-CN;q=0.5'})
         events = getDayEvents(r.text)
         dd = datetime.datetime.strptime(date, "%m月%d日")
 
@@ -76,7 +87,7 @@ def main():
         data[dd.month][dd.day] = events
 
     with open("../src/data/today_in_history.json", "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=4)
+        json.dump(data, f, ensure_ascii=False, indent=2)
 
 
 if __name__ == "__main__":

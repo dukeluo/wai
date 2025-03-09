@@ -3,7 +3,7 @@
 ### 使用
 
 - `python -m ensurepip`
-- `pip install --user pipenv`
+- `pip install pipenv`
 - `pipenv install`
 - `pipenv run python -m today`
 
