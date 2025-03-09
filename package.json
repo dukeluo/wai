@@ -56,7 +56,7 @@
     "eslint-plugin-prettier": "^5.2.3",
     "eslint-plugin-vue": "^9.32.0",
     "globals": "^15.0.0",
-    "husky": "8.0.1",
+    "husky": "9.1.7",
     "postcss-html": "^1.5.0",
     "postcss-preset-env": "^9.1.1",
     "prettier": "^3.2.5",
