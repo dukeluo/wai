@@ -1,5 +1,15 @@
 # 更新日志
 
+## [1.5.0](https://github.com/dukeluo/wai/compare/v1.4.2...v1.5.0) - 2025-03-08
+
+### 新增
+
+- 增加侧边栏设置菜单
+
+### 变化
+
+- 更新「历史上的今天」数据
+
 ## [1.4.2](https://github.com/dukeluo/wai/compare/v1.4.1...v1.4.2) - 2024-03-02
 
 ### 修复
