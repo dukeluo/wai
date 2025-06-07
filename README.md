@@ -90,6 +90,8 @@
 - 当季蔬果的数据来自知乎「一年 12 个月对应的应季时令水果蔬菜有哪些？」中[果蔬百科的回答](https://www.zhihu.com/question/21026884/answer/243125996)。
 - 历史上的今天的数据来自维基百科[历史上的今天](https://zh.m.wikipedia.org/zh-cn/%E5%8E%86%E5%8F%B2%E4%B8%8A%E7%9A%84%E4%BB%8A%E5%A4%A9)。
 
+[![Powered by DartNode](https://dartnode.com/branding/DN-Open-Source-sm.png)](https://dartnode.com?aff=PerkyUnicorn239 'Powered by DartNode - Free VPS for Open Source')
+
 ### 支持作者
 
 <div style="display: flex; align-items: center">
